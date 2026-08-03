@@ -302,7 +302,8 @@ const ICONS = {
   flying:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M10.5 21 12 17l1.5 4M2 12l20-7-4 8M2 12l6.5-1.8M2 12l6.5 4.2M18 13 8.2 10.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   sexual:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 20.5s-7.5-4.4-9.7-9A5.2 5.2 0 0 1 12 6.4a5.2 5.2 0 0 1 9.7 5.1c-2.2 4.6-9.7 9-9.7 9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
   work:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="3" y="7.5" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7.5V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1.5M3 12.5h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
-  gym:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M6.5 7v10M17.5 7v10M4 9.5v5M20 9.5v5M9 12h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  gym:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M6.5 7v10M17.5 7v10M4 9.5v5M20 9.5v5M9 12h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  meds:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>'
 };
 
 const DATA = {
@@ -321,7 +322,7 @@ en:{
   chatIntro:"Hello. Ask me anything about driving, flying, intimacy, returning to work, or exercise after your angioplasty — I'll answer based on this guide.",
   chatDisclaimer:"This chatbot gives general lifestyle guidance only and does not replace advice from your own cardiologist. In an emergency, call your local emergency number immediately.",
   footerNote:"This guide summarises general post-PCI (angioplasty/stent) lifestyle recommendations from ESC, ACC/AHA and Indian cardiology society practice guidance. It is educational material and does not replace individual advice from your treating cardiologist — recovery timelines vary with the complexity of your procedure, heart function, access site (radial/femoral) and any complications.",
-  footerSources:"References: ESC Guidelines on Myocardial Revascularisation & Fitness to Drive; ACC/AHA Coronary Revascularisation Guidelines; Cardiological Society of India practice advisories.",
+  footerSources:"References: ESC Guidelines on Myocardial Revascularisation & Fitness to Drive; ESC Guidelines for Chronic Coronary Syndromes (2024); 2025 ACC/AHA/ACEP/NAEMSP/SCAI Guideline for the Management of Acute Coronary Syndromes; 2021 ACC/AHA/SCAI Guideline for Coronary Artery Revascularisation; Levine GN et al, \"Sexual Activity and Cardiovascular Disease: A Scientific Statement From the American Heart Association,\" Circulation 2012;125:1058–1072; Cardiological Society of India practice advisories. Content last reviewed against published literature: August 2026.",
   sections:[
     {key:"driving", title:"Driving", items:[
       {stage:"First 48 hours", text:"Do not drive. Sedation, reduced reflexes, and the wrist/groin puncture site make it unsafe."},
@@ -336,10 +337,13 @@ en:{
       {stage:"PCI after a heart attack or with complications", text:"Wait at least <b>2 weeks</b> (sometimes 4–6 weeks) and get specific cardiologist clearance before flying."}
     ], note:"Carry your discharge summary, current medicine list, and travel/medical insurance details."},
     {key:"sexual", title:"Sexual activity", items:[
-      {stage:"General rule", text:"It is usually safe to resume once you can climb <b>2 flights of stairs</b> briskly, or walk fast, without chest pain, breathlessness or excess fatigue — around <b>1 week</b> after an uncomplicated procedure."},
-      {stage:"After a heart attack / heart failure", text:"Wait longer, typically <b>2–4 weeks</b>, and discuss timing with your cardiologist."},
-      {stage:"Medicines", text:"Never combine PDE5-inhibitor medicines (e.g. sildenafil, tadalafil) with nitrate medicines — this combination can cause a dangerous drop in blood pressure."}
-    ], note:"Stop the activity and seek help if you develop chest pain, palpitations or severe breathlessness."},
+      {stage:"After angioplasty (PCI)", text:"Sexual activity can usually resume within a <b>few days</b> of PCI, provided there is no complication at the vascular access site. If your procedure was done through the wrist (radial access), you can typically resume as early as, or earlier than, patients treated through the groin (femoral access)."},
+      {stage:"After a heart attack", text:"It is reasonable to resume sexual activity <b>1 week or more</b> after an uncomplicated heart attack, once you have no chest pain, breathlessness or other symptoms during mild-to-moderate physical activity."},
+      {stage:"General fitness benchmark", text:"Sexual activity places a demand on the heart similar to mild-to-moderate exertion — roughly the same as climbing <b>2 flights of stairs</b> briskly or walking fast. If you can do this comfortably without chest pain, breathlessness, dizziness or palpitations, sexual activity is usually safe."},
+      {stage:"Medicines — PDE5 inhibitors", text:"Never combine PDE5-inhibitor medicines (sildenafil, tadalafil, vardenafil) with nitrate medicines — this combination can cause a dangerous drop in blood pressure. After sildenafil or vardenafil, nitrates should not be given for <b>24 hours</b>; after tadalafil, wait <b>48 hours</b>."},
+      {stage:"Don't stop your heart medicines", text:"Beta-blockers and other heart medicines are only rarely the true cause of sexual difficulty. Don't stop or reduce a medicine that protects your heart because of this concern — discuss it with your cardiologist instead."},
+      {stage:"When to hold off", text:"Defer sexual activity if you have unstable or worsening chest pain, decompensated heart failure, or if sexual activity itself triggers chest pain, severe breathlessness or palpitations — until your condition is reviewed and stabilised."}
+    ], note:"Anxiety about resuming intimacy after a heart procedure is common, for patients and partners alike. Talking openly with your cardiologist or rehab team about timing and concerns genuinely helps."},
     {key:"work", title:"Return to work", items:[
       {stage:"Desk / sedentary work", text:"Usually after <b>1 week</b>, once you feel well."},
       {stage:"Light physical work", text:"(standing, walking, light lifting) — usually around <b>2 weeks</b>."},
@@ -352,7 +356,13 @@ en:{
       {stage:"Week 2–4", text:"Begin a structured cardiac rehabilitation exercise programme if enrolled."},
       {stage:"Week 4–6", text:"Light gym work / resistance training with light weights, guided by your rehab team."},
       {stage:"After clearance", text:"Heavy weightlifting, competitive sport or high-intensity training only after cardiologist clearance, usually confirmed with a treadmill/stress test around 6 weeks."}
-    ], note:"Regular moderate activity, not intense bursts, is what protects your heart long-term."}
+    ], note:"Regular moderate activity, not intense bursts, is what protects your heart long-term."},
+    {key:"meds", title:"Medicines after your stent", items:[
+      {stage:"Dual antiplatelet therapy (DAPT)", text:"Continue aspirin plus a P2Y12 inhibitor (ticagrelor, prasugrel or clopidogrel) exactly as prescribed — commonly for about <b>12 months</b> after a stent placed for a heart attack/ACS."},
+      {stage:"2025 update", text:"The 2025 ACC/AHA ACS guideline now allows some higher bleeding-risk patients to stop aspirin after just <b>1 month</b> and continue on a single antiplatelet (often ticagrelor) alone — this is an individualised decision your cardiologist makes, not a self-directed change."},
+      {stage:"Never self-stop", text:"Stopping antiplatelet medicines suddenly on your own sharply raises the risk of the stent blocking (stent thrombosis), which can cause a heart attack."},
+      {stage:"Before any other procedure", text:"Tell any other doctor, surgeon or dentist that you are on antiplatelet therapy before any planned procedure — do not stop it for that procedure without your cardiologist's specific instruction."}
+    ], note:"This section reflects the 2025 ACC/AHA/ACEP/NAEMSP/SCAI ACS Guideline update on antiplatelet duration."}
   ]
 },
 hi:{
@@ -370,7 +380,7 @@ hi:{
   chatIntro:"नमस्ते। एंजियोप्लास्टी के बाद ड्राइविंग, हवाई यात्रा, यौन संबंध, काम पर वापसी या व्यायाम से जुड़ा कोई भी प्रश्न पूछें — मैं इसी गाइड के आधार पर जवाब दूंगा।",
   chatDisclaimer:"यह चैटबॉट केवल सामान्य जीवनशैली संबंधी जानकारी देता है और आपके अपने कार्डियोलॉजिस्ट की सलाह का विकल्प नहीं है। आपात स्थिति में तुरंत अपने स्थानीय आपातकालीन नंबर पर कॉल करें।",
   footerNote:"यह गाइड ESC, ACC/AHA और भारतीय कार्डियोलॉजी सोसाइटी की सामान्य पोस्ट-पीसीआई (एंजियोप्लास्टी/स्टेंट) जीवनशैली सिफारिशों का सारांश है। यह केवल शैक्षणिक जानकारी है और आपके इलाज करने वाले कार्डियोलॉजिस्ट की व्यक्तिगत सलाह का स्थान नहीं ले सकती — रिकवरी का समय आपकी प्रक्रिया की जटिलता, हृदय की कार्यक्षमता, एक्सेस साइट (रेडियल/फीमोरल) और किसी भी जटिलता पर निर्भर करता है।",
-  footerSources:"संदर्भ: ESC मायोकार्डियल रिवास्कुलराइज़ेशन एवं ड्राइविंग फिटनेस दिशानिर्देश; ACC/AHA कोरोनरी रिवास्कुलराइज़ेशन दिशानिर्देश; कार्डियोलॉजिकल सोसाइटी ऑफ इंडिया की व्यावहारिक सलाह।",
+  footerSources:"संदर्भ: ESC मायोकार्डियल रिवास्कुलराइज़ेशन एवं ड्राइविंग फिटनेस दिशानिर्देश; ESC क्रॉनिक कोरोनरी सिंड्रोम दिशानिर्देश (2024); 2025 ACC/AHA/ACEP/NAEMSP/SCAI एक्यूट कोरोनरी सिंड्रोम प्रबंधन दिशानिर्देश; 2021 ACC/AHA/SCAI कोरोनरी आर्टरी रिवास्कुलराइज़ेशन दिशानिर्देश; Levine GN एवं अन्य, \"Sexual Activity and Cardiovascular Disease: A Scientific Statement From the American Heart Association,\" Circulation 2012;125:1058–1072; कार्डियोलॉजिकल सोसाइटी ऑफ इंडिया की व्यावहारिक सलाह। सामग्री की अंतिम समीक्षा: अगस्त 2026।",
   sections:[
     {key:"driving", title:"ड्राइविंग", items:[
       {stage:"पहले 48 घंटे", text:"गाड़ी न चलाएं। सेडेशन का असर, प्रतिक्रिया क्षमता में कमी, और कलाई/ग्रोइन पंक्चर साइट के कारण यह असुरक्षित है।"},
@@ -385,10 +395,13 @@ hi:{
       {stage:"हार्ट अटैक या जटिलताओं के बाद पीसीआई", text:"कम से कम <b>2 सप्ताह</b> (कभी-कभी 4–6 सप्ताह) प्रतीक्षा करें और यात्रा से पहले कार्डियोलॉजिस्ट से स्पष्ट अनुमति लें।"}
     ], note:"अपना डिस्चार्ज सारांश, वर्तमान दवाओं की सूची, और यात्रा/मेडिकल बीमा के दस्तावेज़ साथ रखें।"},
     {key:"sexual", title:"यौन संबंध", items:[
-      {stage:"सामान्य नियम", text:"यदि आप बिना सीने में दर्द, सांस फूले या अत्यधिक थकान के <b>2 मंज़िल सीढ़ियां</b> तेज़ी से चढ़ सकें या तेज़ चल सकें, तो आमतौर पर यह सुरक्षित है — सामान्य प्रक्रिया के लगभग <b>1 सप्ताह</b> बाद।"},
-      {stage:"हार्ट अटैक / हार्ट फेल्योर के बाद", text:"आमतौर पर <b>2–4 सप्ताह</b> अधिक प्रतीक्षा करें, और समय को लेकर अपने कार्डियोलॉजिस्ट से चर्चा करें।"},
-      {stage:"दवाएं", text:"PDE5-इनहिबिटर दवाओं (जैसे सिल्डेनाफिल, टाडालाफिल) को कभी भी नाइट्रेट दवाओं के साथ न लें — इस संयोजन से रक्तचाप में खतरनाक गिरावट हो सकती है।"}
-    ], note:"यदि सीने में दर्द, धड़कन अनियमित होना या तेज़ सांस फूलना हो, तो गतिविधि तुरंत रोकें और सहायता लें।"},
+      {stage:"एंजियोप्लास्टी (PCI) के बाद", text:"यदि एक्सेस साइट पर कोई जटिलता न हो, तो सामान्यतः PCI के <b>कुछ दिनों</b> के भीतर यौन संबंध फिर से शुरू किए जा सकते हैं। यदि आपकी प्रक्रिया कलाई (रेडियल एक्सेस) से हुई है, तो आप आमतौर पर उतनी ही जल्दी या उससे भी पहले शुरू कर सकते हैं जितनी जल्दी ग्रोइन (फीमोरल एक्सेस) वाले मरीज़।"},
+      {stage:"हार्ट अटैक के बाद", text:"सामान्य हार्ट अटैक के <b>1 सप्ताह या उससे अधिक</b> बाद यौन संबंध फिर से शुरू करना उचित है, जब आपको हल्की-मध्यम शारीरिक गतिविधि के दौरान सीने में दर्द, सांस फूलना या अन्य लक्षण न हों।"},
+      {stage:"सामान्य फिटनेस मापदंड", text:"यौन क्रिया हृदय पर हल्के-मध्यम परिश्रम जितना ही भार डालती है — लगभग <b>2 मंज़िल सीढ़ियां</b> तेज़ी से चढ़ने या तेज़ चलने के बराबर। यदि आप बिना सीने में दर्द, सांस फूले, चक्कर या धड़कन अनियमित हुए यह आराम से कर सकें, तो यौन क्रिया आमतौर पर सुरक्षित है।"},
+      {stage:"दवाएं — PDE5 इनहिबिटर", text:"PDE5-इनहिबिटर दवाओं (सिल्डेनाफिल, टाडालाफिल, वार्डेनाफिल) को कभी भी नाइट्रेट दवाओं के साथ न लें — इस संयोजन से रक्तचाप में खतरनाक गिरावट हो सकती है। सिल्डेनाफिल या वार्डेनाफिल लेने के बाद <b>24 घंटे</b> तक नाइट्रेट न दें; टाडालाफिल के बाद <b>48 घंटे</b> प्रतीक्षा करें।"},
+      {stage:"अपनी हृदय की दवाएं बंद न करें", text:"बीटा-ब्लॉकर और अन्य हृदय दवाएं शायद ही कभी यौन समस्या का असली कारण होती हैं। इस चिंता के कारण अपने हृदय की रक्षा करने वाली दवा खुद बंद या कम न करें — इसके बजाय अपने कार्डियोलॉजिस्ट से चर्चा करें।"},
+      {stage:"कब रुकना चाहिए", text:"यदि आपको अस्थिर या बिगड़ता सीने का दर्द, अनियंत्रित हार्ट फेल्योर हो, या यौन क्रिया के दौरान ही सीने में दर्द, तेज़ सांस फूलना या धड़कन अनियमित होना हो, तो जब तक स्थिति स्थिर व समीक्षित न हो जाए, यौन क्रिया टालें।"}
+    ], note:"हृदय प्रक्रिया के बाद अंतरंगता फिर से शुरू करने को लेकर चिंता होना मरीज़ और साथी दोनों के लिए सामान्य है। समय और चिंताओं के बारे में अपने कार्डियोलॉजिस्ट या रिहैब टीम से खुलकर बात करना वास्तव में मददगार होता है।"},
     {key:"work", title:"काम पर वापसी", items:[
       {stage:"डेस्क / बैठकर किया जाने वाला काम", text:"स्वस्थ महसूस करने पर आमतौर पर <b>1 सप्ताह</b> बाद।"},
       {stage:"हल्का शारीरिक काम", text:"(खड़े होना, चलना, हल्का सामान उठाना) — आमतौर पर लगभग <b>2 सप्ताह</b> बाद।"},
@@ -401,7 +414,13 @@ hi:{
       {stage:"सप्ताह 2–4", text:"यदि नामांकित हैं, तो संरचित कार्डियक रिहैबिलिटेशन व्यायाम कार्यक्रम शुरू करें।"},
       {stage:"सप्ताह 4–6", text:"अपनी रिहैब टीम के मार्गदर्शन में हल्के वज़न के साथ हल्का जिम/रेजिस्टेंस प्रशिक्षण।"},
       {stage:"अनुमति मिलने के बाद", text:"भारी वेटलिफ्टिंग, प्रतिस्पर्धी खेल या तीव्र-तीव्रता वाला प्रशिक्षण केवल कार्डियोलॉजिस्ट की अनुमति के बाद, जो आमतौर पर लगभग 6 सप्ताह में ट्रेडमिल/स्ट्रेस टेस्ट से पुष्ट की जाती है।"}
-    ], note:"तीव्र लेकिन छोटे प्रयासों की बजाय नियमित मध्यम गतिविधि ही आपके हृदय की दीर्घकालिक सुरक्षा करती है।"}
+    ], note:"तीव्र लेकिन छोटे प्रयासों की बजाय नियमित मध्यम गतिविधि ही आपके हृदय की दीर्घकालिक सुरक्षा करती है।"},
+    {key:"meds", title:"स्टेंट के बाद दवाएं", items:[
+      {stage:"डुअल एंटीप्लेटलेट थेरेपी (DAPT)", text:"एस्पिरिन के साथ P2Y12 इनहिबिटर (टिकाग्रेलोर, प्रासुग्रेल या क्लोपिडोग्रेल) डॉक्टर की सलाह अनुसार लेते रहें — हार्ट अटैक/ACS के बाद लगे स्टेंट के लिए आमतौर पर लगभग <b>12 महीने</b> तक।"},
+      {stage:"2025 अपडेट", text:"2025 के ACC/AHA ACS दिशानिर्देश के अनुसार, अधिक ब्लीडिंग जोखिम वाले कुछ मरीज़ों में केवल <b>1 महीने</b> बाद एस्पिरिन बंद कर सिर्फ एक एंटीप्लेटलेट दवा (अक्सर टिकाग्रेलोर) जारी रखी जा सकती है — यह निर्णय आपके कार्डियोलॉजिस्ट द्वारा व्यक्तिगत आधार पर लिया जाता है, खुद से नहीं।"},
+      {stage:"खुद से बंद न करें", text:"एंटीप्लेटलेट दवाएं अचानक खुद बंद करने से स्टेंट में रुकावट (स्टेंट थ्रोम्बोसिस) का खतरा काफी बढ़ जाता है, जिससे हार्ट अटैक हो सकता है।"},
+      {stage:"किसी अन्य प्रक्रिया से पहले", text:"किसी भी अन्य डॉक्टर, सर्जन या दंत चिकित्सक को बताएं कि आप एंटीप्लेटलेट थेरेपी पर हैं — अपने कार्डियोलॉजिस्ट की विशेष सलाह के बिना इसे किसी प्रक्रिया के लिए बंद न करें।"}
+    ], note:"यह भाग 2025 के ACC/AHA/ACEP/NAEMSP/SCAI ACS दिशानिर्देश अपडेट पर आधारित है।"}
   ]
 },
 pa:{
@@ -419,7 +438,7 @@ pa:{
   chatIntro:"ਸਤ ਸ੍ਰੀ ਅਕਾਲ। ਐਂਜੀਓਪਲਾਸਟੀ ਤੋਂ ਬਾਅਦ ਡਰਾਈਵਿੰਗ, ਹਵਾਈ ਸਫ਼ਰ, ਸਰੀਰਕ ਸੰਬੰਧ, ਕੰਮ 'ਤੇ ਵਾਪਸੀ ਜਾਂ ਕਸਰਤ ਬਾਰੇ ਕੋਈ ਵੀ ਸਵਾਲ ਪੁੱਛੋ — ਮੈਂ ਇਸੇ ਗਾਈਡ ਦੇ ਆਧਾਰ 'ਤੇ ਜਵਾਬ ਦੇਵਾਂਗਾ।",
   chatDisclaimer:"ਇਹ ਚੈਟਬੋਟ ਸਿਰਫ਼ ਆਮ ਜੀਵਨਸ਼ੈਲੀ ਸੰਬੰਧੀ ਜਾਣਕਾਰੀ ਦਿੰਦਾ ਹੈ ਅਤੇ ਤੁਹਾਡੇ ਆਪਣੇ ਕਾਰਡੀਓਲੋਜਿਸਟ ਦੀ ਸਲਾਹ ਦਾ ਬਦਲ ਨਹੀਂ ਹੈ। ਐਮਰਜੈਂਸੀ ਵਿੱਚ ਤੁਰੰਤ ਆਪਣੇ ਸਥਾਨਕ ਐਮਰਜੈਂਸੀ ਨੰਬਰ 'ਤੇ ਕਾਲ ਕਰੋ।",
   footerNote:"ਇਹ ਗਾਈਡ ESC, ACC/AHA ਅਤੇ ਭਾਰਤੀ ਕਾਰਡੀਓਲੋਜੀ ਸੋਸਾਇਟੀ ਦੀਆਂ ਆਮ ਪੋਸਟ-ਪੀਸੀਆਈ (ਐਂਜੀਓਪਲਾਸਟੀ/ਸਟੈਂਟ) ਜੀਵਨਸ਼ੈਲੀ ਸਿਫ਼ਾਰਸ਼ਾਂ ਦਾ ਸਾਰ ਹੈ। ਇਹ ਸਿਰਫ਼ ਵਿਦਿਅਕ ਜਾਣਕਾਰੀ ਹੈ ਅਤੇ ਤੁਹਾਡੇ ਇਲਾਜ ਕਰਨ ਵਾਲੇ ਕਾਰਡੀਓਲੋਜਿਸਟ ਦੀ ਨਿੱਜੀ ਸਲਾਹ ਦੀ ਥਾਂ ਨਹੀਂ ਲੈ ਸਕਦੀ — ਰਿਕਵਰੀ ਦਾ ਸਮਾਂ ਤੁਹਾਡੀ ਪ੍ਰਕਿਰਿਆ ਦੀ ਜਟਿਲਤਾ, ਦਿਲ ਦੀ ਕਾਰਜਸ਼ੀਲਤਾ, ਐਕਸੈਸ ਸਾਈਟ (ਰੇਡੀਅਲ/ਫੀਮੋਰਲ) ਅਤੇ ਕਿਸੇ ਵੀ ਜਟਿਲਤਾ 'ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ।",
-  footerSources:"ਹਵਾਲੇ: ESC ਮਾਇਓਕਾਰਡੀਅਲ ਰੀਵੈਸਕੁਲਰਾਈਜ਼ੇਸ਼ਨ ਅਤੇ ਡਰਾਈਵਿੰਗ ਫਿਟਨੈਸ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼; ACC/AHA ਕੋਰੋਨਰੀ ਰੀਵੈਸਕੁਲਰਾਈਜ਼ੇਸ਼ਨ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼; ਕਾਰਡੀਓਲੋਜੀਕਲ ਸੋਸਾਇਟੀ ਆਫ਼ ਇੰਡੀਆ ਦੀ ਵਿਹਾਰਕ ਸਲਾਹ।",
+  footerSources:"ਹਵਾਲੇ: ESC ਮਾਇਓਕਾਰਡੀਅਲ ਰੀਵੈਸਕੁਲਰਾਈਜ਼ੇਸ਼ਨ ਅਤੇ ਡਰਾਈਵਿੰਗ ਫਿਟਨੈਸ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼; ESC ਕ੍ਰੌਨਿਕ ਕੋਰੋਨਰੀ ਸਿੰਡਰੋਮ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼ (2024); 2025 ACC/AHA/ACEP/NAEMSP/SCAI ਏਕਿਊਟ ਕੋਰੋਨਰੀ ਸਿੰਡਰੋਮ ਪ੍ਰਬੰਧਨ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼; 2021 ACC/AHA/SCAI ਕੋਰੋਨਰੀ ਆਰਟਰੀ ਰੀਵੈਸਕੁਲਰਾਈਜ਼ੇਸ਼ਨ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼; Levine GN ਅਤੇ ਹੋਰ, \"Sexual Activity and Cardiovascular Disease: A Scientific Statement From the American Heart Association,\" Circulation 2012;125:1058–1072; ਕਾਰਡੀਓਲੋਜੀਕਲ ਸੋਸਾਇਟੀ ਆਫ਼ ਇੰਡੀਆ ਦੀ ਵਿਹਾਰਕ ਸਲਾਹ। ਸਮੱਗਰੀ ਦੀ ਆਖ਼ਰੀ ਸਮੀਖਿਆ: ਅਗਸਤ 2026।",
   sections:[
     {key:"driving", title:"ਡਰਾਈਵਿੰਗ", items:[
       {stage:"ਪਹਿਲੇ 48 ਘੰਟੇ", text:"ਗੱਡੀ ਨਾ ਚਲਾਓ। ਸੈਡੇਸ਼ਨ ਦਾ ਅਸਰ, ਘਟੀ ਪ੍ਰਤੀਕਿਰਿਆ ਸਮਰੱਥਾ, ਅਤੇ ਗੁੱਟ/ਗਰੋਇਨ ਪੰਕਚਰ ਥਾਂ ਕਾਰਨ ਇਹ ਅਸੁਰੱਖਿਅਤ ਹੈ।"},
@@ -434,10 +453,13 @@ pa:{
       {stage:"ਦਿਲ ਦੇ ਦੌਰੇ ਜਾਂ ਜਟਿਲਤਾਵਾਂ ਤੋਂ ਬਾਅਦ ਪੀਸੀਆਈ", text:"ਘੱਟੋ-ਘੱਟ <b>2 ਹਫ਼ਤੇ</b> (ਕਈ ਵਾਰ 4–6 ਹਫ਼ਤੇ) ਉਡੀਕ ਕਰੋ ਅਤੇ ਸਫ਼ਰ ਤੋਂ ਪਹਿਲਾਂ ਕਾਰਡੀਓਲੋਜਿਸਟ ਤੋਂ ਸਪਸ਼ਟ ਮਨਜ਼ੂਰੀ ਲਓ।"}
     ], note:"ਆਪਣਾ ਡਿਸਚਾਰਜ ਸਾਰ, ਮੌਜੂਦਾ ਦਵਾਈਆਂ ਦੀ ਸੂਚੀ, ਅਤੇ ਸਫ਼ਰ/ਮੈਡੀਕਲ ਬੀਮੇ ਦੇ ਕਾਗਜ਼ਾਤ ਨਾਲ ਰੱਖੋ।"},
     {key:"sexual", title:"ਸਰੀਰਕ ਸੰਬੰਧ", items:[
-      {stage:"ਆਮ ਨਿਯਮ", text:"ਜੇ ਤੁਸੀਂ ਬਿਨਾਂ ਛਾਤੀ ਦੇ ਦਰਦ, ਸਾਹ ਚੜ੍ਹੇ ਜਾਂ ਬਹੁਤ ਜ਼ਿਆਦਾ ਥਕਾਵਟ ਦੇ <b>2 ਮੰਜ਼ਿਲਾਂ ਪੌੜੀਆਂ</b> ਤੇਜ਼ੀ ਨਾਲ ਚੜ੍ਹ ਸਕੋ ਜਾਂ ਤੇਜ਼ ਤੁਰ ਸਕੋ, ਤਾਂ ਇਹ ਆਮ ਤੌਰ 'ਤੇ ਸੁਰੱਖਿਅਤ ਹੈ — ਆਮ ਪ੍ਰਕਿਰਿਆ ਦੇ ਲਗਭਗ <b>1 ਹਫ਼ਤੇ</b> ਬਾਅਦ।"},
-      {stage:"ਦਿਲ ਦੇ ਦੌਰੇ / ਦਿਲ ਦੀ ਅਸਫ਼ਲਤਾ ਤੋਂ ਬਾਅਦ", text:"ਆਮ ਤੌਰ 'ਤੇ <b>2–4 ਹਫ਼ਤੇ</b> ਵਧੇਰੇ ਉਡੀਕ ਕਰੋ, ਅਤੇ ਸਮੇਂ ਬਾਰੇ ਆਪਣੇ ਕਾਰਡੀਓਲੋਜਿਸਟ ਨਾਲ ਗੱਲ ਕਰੋ।"},
-      {stage:"ਦਵਾਈਆਂ", text:"PDE5-ਇਨਹਿਬਿਟਰ ਦਵਾਈਆਂ (ਜਿਵੇਂ ਸਿਲਡੇਨਾਫ਼ਿਲ, ਟੈਡਾਲਾਫ਼ਿਲ) ਨੂੰ ਕਦੇ ਵੀ ਨਾਈਟ੍ਰੇਟ ਦਵਾਈਆਂ ਨਾਲ ਨਾ ਲਓ — ਇਸ ਮਿਸ਼ਰਣ ਨਾਲ ਬਲੱਡ ਪ੍ਰੈਸ਼ਰ ਵਿੱਚ ਖ਼ਤਰਨਾਕ ਗਿਰਾਵਟ ਆ ਸਕਦੀ ਹੈ।"}
-    ], note:"ਜੇ ਛਾਤੀ ਵਿੱਚ ਦਰਦ, ਧੜਕਣ ਦਾ ਅਨਿਯਮਿਤ ਹੋਣਾ ਜਾਂ ਬਹੁਤ ਜ਼ਿਆਦਾ ਸਾਹ ਚੜ੍ਹਨਾ ਹੋਵੇ, ਤਾਂ ਗਤੀਵਿਧੀ ਤੁਰੰਤ ਰੋਕੋ ਅਤੇ ਮਦਦ ਲਓ।"},
+      {stage:"ਐਂਜੀਓਪਲਾਸਟੀ (PCI) ਤੋਂ ਬਾਅਦ", text:"ਜੇ ਐਕਸੈਸ ਥਾਂ 'ਤੇ ਕੋਈ ਜਟਿਲਤਾ ਨਾ ਹੋਵੇ, ਤਾਂ ਆਮ ਤੌਰ 'ਤੇ PCI ਦੇ <b>ਕੁਝ ਦਿਨਾਂ</b> ਅੰਦਰ ਸਰੀਰਕ ਸੰਬੰਧ ਮੁੜ ਸ਼ੁਰੂ ਕੀਤੇ ਜਾ ਸਕਦੇ ਹਨ। ਜੇ ਤੁਹਾਡੀ ਪ੍ਰਕਿਰਿਆ ਗੁੱਟ (ਰੇਡੀਅਲ ਐਕਸੈਸ) ਰਾਹੀਂ ਹੋਈ ਹੈ, ਤਾਂ ਤੁਸੀਂ ਆਮ ਤੌਰ 'ਤੇ ਗਰੋਇਨ (ਫੀਮੋਰਲ ਐਕਸੈਸ) ਵਾਲੇ ਮਰੀਜ਼ਾਂ ਜਿੰਨੀ ਜਲਦੀ ਜਾਂ ਉਸ ਤੋਂ ਵੀ ਪਹਿਲਾਂ ਸ਼ੁਰੂ ਕਰ ਸਕਦੇ ਹੋ।"},
+      {stage:"ਦਿਲ ਦੇ ਦੌਰੇ ਤੋਂ ਬਾਅਦ", text:"ਆਮ ਦਿਲ ਦੇ ਦੌਰੇ ਦੇ <b>1 ਹਫ਼ਤੇ ਜਾਂ ਵਧੇਰੇ</b> ਬਾਅਦ ਸਰੀਰਕ ਸੰਬੰਧ ਮੁੜ ਸ਼ੁਰੂ ਕਰਨਾ ਉਚਿਤ ਹੈ, ਜਦੋਂ ਤੁਹਾਨੂੰ ਹਲਕੀ-ਦਰਮਿਆਨੀ ਸਰੀਰਕ ਗਤੀਵਿਧੀ ਦੌਰਾਨ ਛਾਤੀ ਵਿੱਚ ਦਰਦ, ਸਾਹ ਚੜ੍ਹਨਾ ਜਾਂ ਹੋਰ ਲੱਛਣ ਨਾ ਹੋਣ।"},
+      {stage:"ਆਮ ਫਿਟਨੈਸ ਮਾਪਦੰਡ", text:"ਸਰੀਰਕ ਕਿਰਿਆ ਦਿਲ 'ਤੇ ਹਲਕੇ-ਦਰਮਿਆਨੇ ਮਿਹਨਤ ਜਿੰਨਾ ਹੀ ਭਾਰ ਪਾਉਂਦੀ ਹੈ — ਲਗਭਗ <b>2 ਮੰਜ਼ਿਲਾਂ ਪੌੜੀਆਂ</b> ਤੇਜ਼ੀ ਨਾਲ ਚੜ੍ਹਨ ਜਾਂ ਤੇਜ਼ ਤੁਰਨ ਦੇ ਬਰਾਬਰ। ਜੇ ਤੁਸੀਂ ਬਿਨਾਂ ਛਾਤੀ ਦੇ ਦਰਦ, ਸਾਹ ਚੜ੍ਹੇ, ਚੱਕਰ ਜਾਂ ਧੜਕਣ ਅਨਿਯਮਿਤ ਹੋਏ ਇਹ ਆਰਾਮ ਨਾਲ ਕਰ ਸਕੋ, ਤਾਂ ਸਰੀਰਕ ਕਿਰਿਆ ਆਮ ਤੌਰ 'ਤੇ ਸੁਰੱਖਿਅਤ ਹੈ।"},
+      {stage:"ਦਵਾਈਆਂ — PDE5 ਇਨਹਿਬਿਟਰ", text:"PDE5-ਇਨਹਿਬਿਟਰ ਦਵਾਈਆਂ (ਸਿਲਡੇਨਾਫ਼ਿਲ, ਟੈਡਾਲਾਫ਼ਿਲ, ਵਾਰਡੇਨਾਫ਼ਿਲ) ਨੂੰ ਕਦੇ ਵੀ ਨਾਈਟ੍ਰੇਟ ਦਵਾਈਆਂ ਨਾਲ ਨਾ ਲਓ — ਇਸ ਮਿਸ਼ਰਣ ਨਾਲ ਬਲੱਡ ਪ੍ਰੈਸ਼ਰ ਵਿੱਚ ਖ਼ਤਰਨਾਕ ਗਿਰਾਵਟ ਆ ਸਕਦੀ ਹੈ। ਸਿਲਡੇਨਾਫ਼ਿਲ ਜਾਂ ਵਾਰਡੇਨਾਫ਼ਿਲ ਲੈਣ ਤੋਂ ਬਾਅਦ <b>24 ਘੰਟੇ</b> ਤੱਕ ਨਾਈਟ੍ਰੇਟ ਨਾ ਦਿਓ; ਟੈਡਾਲਾਫ਼ਿਲ ਤੋਂ ਬਾਅਦ <b>48 ਘੰਟੇ</b> ਉਡੀਕ ਕਰੋ।"},
+      {stage:"ਆਪਣੀਆਂ ਦਿਲ ਦੀਆਂ ਦਵਾਈਆਂ ਬੰਦ ਨਾ ਕਰੋ", text:"ਬੀਟਾ-ਬਲੌਕਰ ਅਤੇ ਹੋਰ ਦਿਲ ਦੀਆਂ ਦਵਾਈਆਂ ਸ਼ਾਇਦ ਹੀ ਕਦੇ ਸਰੀਰਕ ਸਮੱਸਿਆ ਦਾ ਅਸਲ ਕਾਰਨ ਹੁੰਦੀਆਂ ਹਨ। ਇਸ ਚਿੰਤਾ ਕਾਰਨ ਆਪਣੇ ਦਿਲ ਦੀ ਰੱਖਿਆ ਕਰਨ ਵਾਲੀ ਦਵਾਈ ਖ਼ੁਦ ਬੰਦ ਜਾਂ ਘੱਟ ਨਾ ਕਰੋ — ਇਸ ਦੀ ਬਜਾਏ ਆਪਣੇ ਕਾਰਡੀਓਲੋਜਿਸਟ ਨਾਲ ਗੱਲ ਕਰੋ।"},
+      {stage:"ਕਦੋਂ ਰੁਕਣਾ ਚਾਹੀਦਾ ਹੈ", text:"ਜੇ ਤੁਹਾਨੂੰ ਅਸਥਿਰ ਜਾਂ ਵਿਗੜਦਾ ਛਾਤੀ ਦਾ ਦਰਦ, ਅਨਿਯੰਤਰਿਤ ਦਿਲ ਦੀ ਅਸਫ਼ਲਤਾ ਹੋਵੇ, ਜਾਂ ਸਰੀਰਕ ਕਿਰਿਆ ਦੌਰਾਨ ਹੀ ਛਾਤੀ ਵਿੱਚ ਦਰਦ, ਤੇਜ਼ ਸਾਹ ਚੜ੍ਹਨਾ ਜਾਂ ਧੜਕਣ ਅਨਿਯਮਿਤ ਹੋਣਾ ਹੋਵੇ, ਤਾਂ ਜਦੋਂ ਤੱਕ ਸਥਿਤੀ ਸਮੀਖਿਆ ਅਤੇ ਸਥਿਰ ਨਾ ਹੋ ਜਾਵੇ, ਸਰੀਰਕ ਕਿਰਿਆ ਟਾਲੋ।"}
+    ], note:"ਦਿਲ ਦੀ ਪ੍ਰਕਿਰਿਆ ਤੋਂ ਬਾਅਦ ਨੇੜਤਾ ਮੁੜ ਸ਼ੁਰੂ ਕਰਨ ਨੂੰ ਲੈ ਕੇ ਚਿੰਤਾ ਹੋਣਾ ਮਰੀਜ਼ ਅਤੇ ਸਾਥੀ ਦੋਵਾਂ ਲਈ ਆਮ ਹੈ। ਸਮੇਂ ਅਤੇ ਚਿੰਤਾਵਾਂ ਬਾਰੇ ਆਪਣੇ ਕਾਰਡੀਓਲੋਜਿਸਟ ਜਾਂ ਰੀਹੈਬ ਟੀਮ ਨਾਲ ਖੁੱਲ੍ਹ ਕੇ ਗੱਲ ਕਰਨਾ ਸੱਚਮੁੱਚ ਮਦਦਗਾਰ ਹੁੰਦਾ ਹੈ।"},
     {key:"work", title:"ਕੰਮ 'ਤੇ ਵਾਪਸੀ", items:[
       {stage:"ਡੈਸਕ / ਬੈਠ ਕੇ ਕੀਤਾ ਜਾਣ ਵਾਲਾ ਕੰਮ", text:"ਠੀਕ ਮਹਿਸੂਸ ਕਰਨ 'ਤੇ ਆਮ ਤੌਰ 'ਤੇ <b>1 ਹਫ਼ਤੇ</b> ਬਾਅਦ।"},
       {stage:"ਹਲਕਾ ਸਰੀਰਕ ਕੰਮ", text:"(ਖੜ੍ਹੇ ਹੋਣਾ, ਤੁਰਨਾ, ਹਲਕਾ ਸਮਾਨ ਚੁੱਕਣਾ) — ਆਮ ਤੌਰ 'ਤੇ ਲਗਭਗ <b>2 ਹਫ਼ਤੇ</b> ਬਾਅਦ।"},
@@ -450,7 +472,13 @@ pa:{
       {stage:"ਹਫ਼ਤਾ 2–4", text:"ਜੇ ਦਾਖਲ ਹੋ, ਤਾਂ ਸੰਗਠਿਤ ਕਾਰਡੀਐਕ ਰੀਹੈਬਿਲੀਟੇਸ਼ਨ ਕਸਰਤ ਪ੍ਰੋਗਰਾਮ ਸ਼ੁਰੂ ਕਰੋ।"},
       {stage:"ਹਫ਼ਤਾ 4–6", text:"ਆਪਣੀ ਰੀਹੈਬ ਟੀਮ ਦੀ ਅਗਵਾਈ ਵਿੱਚ ਹਲਕੇ ਭਾਰ ਨਾਲ ਹਲਕੀ ਜਿਮ/ਰੈਜ਼ਿਸਟੈਂਸ ਸਿਖਲਾਈ।"},
       {stage:"ਮਨਜ਼ੂਰੀ ਤੋਂ ਬਾਅਦ", text:"ਭਾਰੀ ਵੇਟਲਿਫਟਿੰਗ, ਮੁਕਾਬਲੇ ਵਾਲੀ ਖੇਡ ਜਾਂ ਤੀਬਰ ਸਿਖਲਾਈ ਸਿਰਫ਼ ਕਾਰਡੀਓਲੋਜਿਸਟ ਦੀ ਮਨਜ਼ੂਰੀ ਤੋਂ ਬਾਅਦ, ਜੋ ਆਮ ਤੌਰ 'ਤੇ ਲਗਭਗ 6 ਹਫ਼ਤਿਆਂ ਵਿੱਚ ਟ੍ਰੈਡਮਿਲ/ਸਟ੍ਰੈੱਸ ਟੈਸਟ ਨਾਲ ਪੁਸ਼ਟੀ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।"}
-    ], note:"ਤੀਬਰ ਪਰ ਥੋੜ੍ਹੇ ਸਮੇਂ ਦੀ ਬਜਾਏ ਨਿਯਮਤ ਦਰਮਿਆਨੀ ਗਤੀਵਿਧੀ ਹੀ ਤੁਹਾਡੇ ਦਿਲ ਦੀ ਲੰਬੇ ਸਮੇਂ ਦੀ ਰਾਖੀ ਕਰਦੀ ਹੈ।"}
+    ], note:"ਤੀਬਰ ਪਰ ਥੋੜ੍ਹੇ ਸਮੇਂ ਦੀ ਬਜਾਏ ਨਿਯਮਤ ਦਰਮਿਆਨੀ ਗਤੀਵਿਧੀ ਹੀ ਤੁਹਾਡੇ ਦਿਲ ਦੀ ਲੰਬੇ ਸਮੇਂ ਦੀ ਰਾਖੀ ਕਰਦੀ ਹੈ।"},
+    {key:"meds", title:"ਸਟੈਂਟ ਤੋਂ ਬਾਅਦ ਦਵਾਈਆਂ", items:[
+      {stage:"ਡਿਊਲ ਐਂਟੀਪਲੇਟਲੈੱਟ ਥੈਰੇਪੀ (DAPT)", text:"ਐਸਪਰੀਨ ਦੇ ਨਾਲ P2Y12 ਇਨਹਿਬਿਟਰ (ਟਿਕਾਗ੍ਰੇਲਰ, ਪ੍ਰਾਸੁਗ੍ਰੇਲ ਜਾਂ ਕਲੋਪੀਡੋਗ੍ਰੇਲ) ਡਾਕਟਰ ਦੀ ਸਲਾਹ ਅਨੁਸਾਰ ਲੈਂਦੇ ਰਹੋ — ਦਿਲ ਦੇ ਦੌਰੇ/ACS ਤੋਂ ਬਾਅਦ ਲੱਗੇ ਸਟੈਂਟ ਲਈ ਆਮ ਤੌਰ 'ਤੇ ਲਗਭਗ <b>12 ਮਹੀਨੇ</b> ਤੱਕ।"},
+      {stage:"2025 ਅੱਪਡੇਟ", text:"2025 ਦੇ ACC/AHA ACS ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼ ਅਨੁਸਾਰ, ਵਧੇਰੇ ਖੂਨ ਵਹਿਣ ਦੇ ਖ਼ਤਰੇ ਵਾਲੇ ਕੁਝ ਮਰੀਜ਼ਾਂ ਵਿੱਚ ਸਿਰਫ਼ <b>1 ਮਹੀਨੇ</b> ਬਾਅਦ ਐਸਪਰੀਨ ਬੰਦ ਕਰਕੇ ਸਿਰਫ਼ ਇੱਕ ਐਂਟੀਪਲੇਟਲੈੱਟ ਦਵਾਈ (ਅਕਸਰ ਟਿਕਾਗ੍ਰੇਲਰ) ਜਾਰੀ ਰੱਖੀ ਜਾ ਸਕਦੀ ਹੈ — ਇਹ ਫ਼ੈਸਲਾ ਤੁਹਾਡੇ ਕਾਰਡੀਓਲੋਜਿਸਟ ਦੁਆਰਾ ਨਿੱਜੀ ਆਧਾਰ 'ਤੇ ਲਿਆ ਜਾਂਦਾ ਹੈ, ਖ਼ੁਦ ਤੋਂ ਨਹੀਂ।"},
+      {stage:"ਖ਼ੁਦ ਬੰਦ ਨਾ ਕਰੋ", text:"ਐਂਟੀਪਲੇਟਲੈੱਟ ਦਵਾਈਆਂ ਅਚਾਨਕ ਖ਼ੁਦ ਬੰਦ ਕਰਨ ਨਾਲ ਸਟੈਂਟ ਵਿੱਚ ਰੁਕਾਵਟ (ਸਟੈਂਟ ਥ੍ਰੌਂਬੋਸਿਸ) ਦਾ ਖ਼ਤਰਾ ਕਾਫ਼ੀ ਵੱਧ ਜਾਂਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਦਿਲ ਦਾ ਦੌਰਾ ਪੈ ਸਕਦਾ ਹੈ।"},
+      {stage:"ਕਿਸੇ ਹੋਰ ਪ੍ਰਕਿਰਿਆ ਤੋਂ ਪਹਿਲਾਂ", text:"ਕਿਸੇ ਵੀ ਹੋਰ ਡਾਕਟਰ, ਸਰਜਨ ਜਾਂ ਦੰਦਾਂ ਦੇ ਡਾਕਟਰ ਨੂੰ ਦੱਸੋ ਕਿ ਤੁਸੀਂ ਐਂਟੀਪਲੇਟਲੈੱਟ ਥੈਰੇਪੀ 'ਤੇ ਹੋ — ਆਪਣੇ ਕਾਰਡੀਓਲੋਜਿਸਟ ਦੀ ਖ਼ਾਸ ਸਲਾਹ ਤੋਂ ਬਿਨਾਂ ਇਸਨੂੰ ਕਿਸੇ ਪ੍ਰਕਿਰਿਆ ਲਈ ਬੰਦ ਨਾ ਕਰੋ।"}
+    ], note:"ਇਹ ਭਾਗ 2025 ਦੇ ACC/AHA/ACEP/NAEMSP/SCAI ACS ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼ ਅੱਪਡੇਟ 'ਤੇ ਆਧਾਰਿਤ ਹੈ।"}
   ]
 },
 bn:{
@@ -468,7 +496,7 @@ bn:{
   chatIntro:"নমস্কার। অ্যাঞ্জিওপ্লাস্টির পরে ড্রাইভিং, বিমান ভ্রমণ, যৌন মিলন, কাজে ফেরা বা ব্যায়াম সম্পর্কে যেকোনো প্রশ্ন জিজ্ঞাসা করুন — আমি এই গাইডের ভিত্তিতে উত্তর দেব।",
   chatDisclaimer:"এই চ্যাটবট শুধুমাত্র সাধারণ জীবনযাত্রা সংক্রান্ত পরামর্শ দেয় এবং আপনার নিজস্ব কার্ডিওলজিস্টের পরামর্শের বিকল্প নয়। জরুরি অবস্থায় সঙ্গে সঙ্গে আপনার স্থানীয় জরুরি নম্বরে কল করুন।",
   footerNote:"এই গাইডটি ESC, ACC/AHA এবং ভারতীয় কার্ডিওলজি সোসাইটির সাধারণ পোস্ট-পিসিআই (অ্যাঞ্জিওপ্লাস্টি/স্টেন্ট) জীবনযাত্রা সংক্রান্ত সুপারিশের সারাংশ। এটি শুধুমাত্র শিক্ষামূলক উপাদান এবং আপনার চিকিৎসারত কার্ডিওলজিস্টের ব্যক্তিগত পরামর্শের বিকল্প নয় — সেরে ওঠার সময়কাল আপনার প্রক্রিয়ার জটিলতা, হৃদযন্ত্রের কার্যকারিতা, অ্যাক্সেস স্থান (রেডিয়াল/ফিমোরাল) এবং কোনো জটিলতার উপর নির্ভর করে।",
-  footerSources:"তথ্যসূত্র: ESC মায়োকার্ডিয়াল রিভাস্কুলারাইজেশন ও ড্রাইভিং ফিটনেস নির্দেশিকা; ACC/AHA করোনারি রিভাস্কুলারাইজেশন নির্দেশিকা; কার্ডিওলজিক্যাল সোসাইটি অফ ইন্ডিয়ার ব্যবহারিক পরামর্শ।",
+  footerSources:"তথ্যসূত্র: ESC মায়োকার্ডিয়াল রিভাস্কুলারাইজেশন ও ড্রাইভিং ফিটনেস নির্দেশিকা; ESC ক্রনিক করোনারি সিনড্রোম নির্দেশিকা (২০২৪); ২০২৫ ACC/AHA/ACEP/NAEMSP/SCAI অ্যাকিউট করোনারি সিনড্রোম ব্যবস্থাপনা নির্দেশিকা; ২০২১ ACC/AHA/SCAI করোনারি আর্টারি রিভাস্কুলারাইজেশন নির্দেশিকা; Levine GN ও অন্যান্য, \"Sexual Activity and Cardiovascular Disease: A Scientific Statement From the American Heart Association,\" Circulation 2012;125:1058–1072; কার্ডিওলজিক্যাল সোসাইটি অফ ইন্ডিয়ার ব্যবহারিক পরামর্শ। বিষয়বস্তুর সর্বশেষ পর্যালোচনা: আগস্ট ২০২৬।",
   sections:[
     {key:"driving", title:"ড্রাইভিং", items:[
       {stage:"প্রথম ৪৮ ঘণ্টা", text:"গাড়ি চালাবেন না। সেডেশনের প্রভাব, কম প্রতিক্রিয়া ক্ষমতা এবং কব্জি/কুঁচকির পাংচার স্থানের কারণে এটি নিরাপদ নয়।"},
@@ -483,10 +511,13 @@ bn:{
       {stage:"হার্ট অ্যাটাক বা জটিলতার পরে পিসিআই", text:"অন্তত <b>২ সপ্তাহ</b> (কখনো কখনো ৪–৬ সপ্তাহ) অপেক্ষা করুন এবং ভ্রমণের আগে নির্দিষ্টভাবে কার্ডিওলজিস্টের অনুমতি নিন।"}
     ], note:"আপনার ডিসচার্জ সারাংশ, বর্তমান ওষুধের তালিকা এবং ভ্রমণ/মেডিকেল বিমার কাগজপত্র সঙ্গে রাখুন।"},
     {key:"sexual", title:"যৌন মিলন", items:[
-      {stage:"সাধারণ নিয়ম", text:"বুকে ব্যথা, শ্বাসকষ্ট বা অতিরিক্ত ক্লান্তি ছাড়া <b>২ তলা সিঁড়ি</b> দ্রুত ওঠা বা জোরে হাঁটা সম্ভব হলে, সাধারণত এটি নিরাপদ — সাধারণ প্রক্রিয়ার প্রায় <b>১ সপ্তাহ</b> পরে।"},
-      {stage:"হার্ট অ্যাটাক / হার্ট ফেইলিওরের পরে", text:"সাধারণত <b>২–৪ সপ্তাহ</b> বেশি অপেক্ষা করুন এবং সময় নিয়ে আপনার কার্ডিওলজিস্টের সঙ্গে আলোচনা করুন।"},
-      {stage:"ওষুধ", text:"PDE5-ইনহিবিটর ওষুধ (যেমন সিলডেনাফিল, টাডালাফিল) কখনোই নাইট্রেট ওষুধের সঙ্গে খাবেন না — এই মিশ্রণে রক্তচাপ বিপজ্জনকভাবে কমে যেতে পারে।"}
-    ], note:"বুকে ব্যথা, হৃদস্পন্দনে অনিয়ম বা তীব্র শ্বাসকষ্ট হলে কার্যকলাপ বন্ধ করে সাহায্য নিন।"},
+      {stage:"অ্যাঞ্জিওপ্লাস্টির (PCI) পরে", text:"অ্যাক্সেস স্থানে কোনো জটিলতা না থাকলে সাধারণত PCI-এর <b>কয়েক দিনের</b> মধ্যেই যৌন মিলন পুনরায় শুরু করা যায়। আপনার প্রক্রিয়া যদি কব্জির (রেডিয়াল অ্যাক্সেস) মাধ্যমে হয়ে থাকে, তবে আপনি সাধারণত কুঁচকির (ফিমোরাল অ্যাক্সেস) রোগীদের মতোই বা তার চেয়েও দ্রুত শুরু করতে পারেন।"},
+      {stage:"হার্ট অ্যাটাকের পরে", text:"সাধারণ হার্ট অ্যাটাকের <b>১ সপ্তাহ বা তার বেশি</b> পরে যৌন মিলন পুনরায় শুরু করা যুক্তিসঙ্গত, যখন হালকা-মাঝারি শারীরিক কার্যকলাপের সময় বুকে ব্যথা, শ্বাসকষ্ট বা অন্য লক্ষণ না থাকে।"},
+      {stage:"সাধারণ ফিটনেস মাপকাঠি", text:"যৌন কার্যকলাপ হৃদযন্ত্রের উপর হালকা-মাঝারি পরিশ্রমের মতোই চাপ ফেলে — মোটামুটি <b>২ তলা সিঁড়ি</b> দ্রুত ওঠা বা জোরে হাঁটার সমান। বুকে ব্যথা, শ্বাসকষ্ট, মাথা ঘোরা বা হৃদস্পন্দনে অনিয়ম ছাড়া আরামে এটি করতে পারলে, যৌন কার্যকলাপ সাধারণত নিরাপদ।"},
+      {stage:"ওষুধ — PDE5 ইনহিবিটর", text:"PDE5-ইনহিবিটর ওষুধ (সিলডেনাফিল, টাডালাফিল, ভারডেনাফিল) কখনোই নাইট্রেট ওষুধের সঙ্গে খাবেন না — এই মিশ্রণে রক্তচাপ বিপজ্জনকভাবে কমে যেতে পারে। সিলডেনাফিল বা ভারডেনাফিল খাওয়ার পরে <b>২৪ ঘণ্টা</b> নাইট্রেট দেওয়া যাবে না; টাডালাফিলের পরে <b>৪৮ ঘণ্টা</b> অপেক্ষা করুন।"},
+      {stage:"হৃদযন্ত্রের ওষুধ বন্ধ করবেন না", text:"বিটা-ব্লকার ও অন্যান্য হৃদযন্ত্রের ওষুধ খুব কমই যৌন সমস্যার আসল কারণ হয়। এই উদ্বেগের কারণে হৃদযন্ত্র রক্ষাকারী ওষুধ নিজে থেকে বন্ধ বা কমাবেন না — পরিবর্তে আপনার কার্ডিওলজিস্টের সঙ্গে আলোচনা করুন।"},
+      {stage:"কখন বিরত থাকবেন", text:"অস্থির বা বাড়তে থাকা বুকে ব্যথা, অনিয়ন্ত্রিত হার্ট ফেইলিওর থাকলে, বা যৌন কার্যকলাপের সময়ই বুকে ব্যথা, তীব্র শ্বাসকষ্ট বা হৃদস্পন্দনে অনিয়ম দেখা দিলে, অবস্থা পর্যালোচনা ও স্থিতিশীল না হওয়া পর্যন্ত যৌন কার্যকলাপ স্থগিত রাখুন।"}
+    ], note:"হৃদযন্ত্রের প্রক্রিয়ার পরে ঘনিষ্ঠতা পুনরায় শুরু করা নিয়ে উদ্বেগ রোগী ও সঙ্গী উভয়ের জন্যই স্বাভাবিক। সময় ও উদ্বেগ নিয়ে আপনার কার্ডিওলজিস্ট বা রিহ্যাব দলের সঙ্গে খোলাখুলি কথা বলা সত্যিই সহায়ক।"},
     {key:"work", title:"কাজে ফেরা", items:[
       {stage:"ডেস্ক / বসে করা কাজ", text:"সুস্থ বোধ করলে সাধারণত <b>১ সপ্তাহ</b> পরে।"},
       {stage:"হালকা শারীরিক কাজ", text:"(দাঁড়ানো, হাঁটা, হালকা ভার তোলা) — সাধারণত প্রায় <b>২ সপ্তাহ</b> পরে।"},
@@ -499,7 +530,13 @@ bn:{
       {stage:"সপ্তাহ ২–৪", text:"নথিভুক্ত থাকলে সংগঠিত কার্ডিয়াক রিহ্যাবিলিটেশন ব্যায়াম কর্মসূচি শুরু করুন।"},
       {stage:"সপ্তাহ ৪–৬", text:"আপনার রিহ্যাব দলের নির্দেশনায় হালকা ওজন নিয়ে হালকা জিম/রেজিস্ট্যান্স প্রশিক্ষণ।"},
       {stage:"অনুমতির পরে", text:"ভারী ওজন তোলা, প্রতিযোগিতামূলক খেলা বা উচ্চ-তীব্রতার প্রশিক্ষণ শুধুমাত্র কার্ডিওলজিস্টের অনুমতির পরে, যা সাধারণত প্রায় ৬ সপ্তাহে ট্রেডমিল/স্ট্রেস টেস্ট দিয়ে নিশ্চিত করা হয়।"}
-    ], note:"তীব্র কিন্তু স্বল্পস্থায়ী পরিশ্রমের চেয়ে নিয়মিত মাঝারি কার্যকলাপই আপনার হৃদযন্ত্রকে দীর্ঘমেয়াদে সুরক্ষা দেয়।"}
+    ], note:"তীব্র কিন্তু স্বল্পস্থায়ী পরিশ্রমের চেয়ে নিয়মিত মাঝারি কার্যকলাপই আপনার হৃদযন্ত্রকে দীর্ঘমেয়াদে সুরক্ষা দেয়।"},
+    {key:"meds", title:"স্টেন্টের পরে ওষুধ", items:[
+      {stage:"ডুয়াল অ্যান্টিপ্লেটলেট থেরাপি (DAPT)", text:"অ্যাসপিরিনের সঙ্গে P2Y12 ইনহিবিটর (টিকাগ্রেলর, প্রাসুগ্রেল বা ক্লোপিডোগ্রেল) ডাক্তারের নির্দেশ অনুযায়ী চালিয়ে যান — হার্ট অ্যাটাক/ACS-এর পরে বসানো স্টেন্টের জন্য সাধারণত প্রায় <b>১২ মাস</b>।"},
+      {stage:"২০২৫ আপডেট", text:"২০২৫ সালের ACC/AHA ACS নির্দেশিকা অনুযায়ী, বেশি রক্তক্ষরণ ঝুঁকিসম্পন্ন কিছু রোগীর ক্ষেত্রে মাত্র <b>১ মাস</b> পরে অ্যাসপিরিন বন্ধ করে শুধু একটি অ্যান্টিপ্লেটলেট ওষুধ (প্রায়ই টিকাগ্রেলর) চালিয়ে যাওয়া যেতে পারে — এই সিদ্ধান্ত আপনার কার্ডিওলজিস্ট ব্যক্তিগতভাবে নেন, নিজে থেকে নয়।"},
+      {stage:"নিজে থেকে বন্ধ করবেন না", text:"অ্যান্টিপ্লেটলেট ওষুধ হঠাৎ নিজে থেকে বন্ধ করলে স্টেন্ট আটকে যাওয়ার (স্টেন্ট থ্রম্বোসিস) ঝুঁকি অনেক বেড়ে যায়, যা হার্ট অ্যাটাক ঘটাতে পারে।"},
+      {stage:"অন্য কোনো প্রক্রিয়ার আগে", text:"অন্য কোনো ডাক্তার, সার্জন বা দন্ত চিকিৎসককে জানান যে আপনি অ্যান্টিপ্লেটলেট থেরাপিতে আছেন — আপনার কার্ডিওলজিস্টের নির্দিষ্ট নির্দেশ ছাড়া কোনো প্রক্রিয়ার জন্য এটি বন্ধ করবেন না।"}
+    ], note:"এই অংশটি ২০২৫ সালের ACC/AHA/ACEP/NAEMSP/SCAI ACS নির্দেশিকা আপডেটের ভিত্তিতে তৈরি।"}
   ]
 }
 };
