@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-PTCA Recovery Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Serif+Bengali:wght@600;700&family=Noto+Serif+Gurmukhi:wght@600;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Sans+Gurmukhi:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F7F5;
+    --card:#FFFFFF;
+    --ink:#16232B;
+    --ink-soft:#4B5B62;
+    --teal:#1F6F5C;
+    --teal-light:#E4F0EB;
+    --teal-line:#BFDAD0;
+    --amber:#A9662A;
+    --amber-light:#F7ECDD;
+    --coral:#B9402A;
+    --coral-light:#FBEAE6;
+    --slate:#3D5A73;
+    --slate-light:#E9EEF2;
+    --line:#DCE3E0;
+    --shadow: 0 1px 2px rgba(22,35,43,0.04), 0 8px 24px -12px rgba(22,35,43,0.12);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Noto Sans","Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Gurmukhi",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  h1,h2,h3,.serif{
+    font-family:"Noto Serif","Noto Serif Devanagari","Noto Serif Bengali","Noto Serif Gurmukhi",serif;
+    font-weight:700;
+    margin:0;
+  }
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    font-weight:500;
+  }
+  a{color:var(--slate);}
+  button{font-family:inherit;cursor:pointer;}
+  :focus-visible{outline:2px solid var(--slate);outline-offset:2px;}
+
+  /* ---- Top bar ---- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    background:rgba(245,247,245,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    padding:12px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{
+    width:30px;height:30px;flex:none;
+  }
+  .brand-name{font-size:14px;font-weight:700;font-family:"Noto Serif","Noto Serif Devanagari","Noto Serif Bengali","Noto Serif Gurmukhi",serif;line-height:1.15;}
+  .brand-sub{font-size:10.5px;color:var(--ink-soft);}
+  .langswitch{display:flex;background:var(--slate-light);border-radius:999px;padding:3px;gap:2px;}
+  .langswitch button{
+    border:none;background:transparent;color:var(--slate);
+    font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;
+    transition:background .15s,color .15s;
+  }
+  .langswitch button.active{background:var(--slate);color:#fff;}
+
+  /* ---- Hero ---- */
+  .hero{max-width:920px;margin:0 auto;padding:40px 20px 8px;}
+  .hero h1{font-size:clamp(26px,4.4vw,38px);letter-spacing:-0.01em;color:var(--ink);}
+  .hero p.tagline{margin-top:10px;font-size:15.5px;color:var(--ink-soft);max-width:60ch;}
+
+  /* ---- Pulse timeline signature ---- */
+  .pulse-wrap{max-width:920px;margin:26px auto 6px;padding:0 20px;}
+  .pulse-rail{
+    position:relative;
+    background:linear-gradient(180deg,var(--card),var(--card));
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px 18px 16px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .pulse-svg{width:100%;height:46px;display:block;}
+  .pulse-stages{
+    display:grid;grid-template-columns:repeat(5,1fr);
+    margin-top:6px;
+  }
+  .pulse-stage{text-align:center;font-size:11.5px;color:var(--ink-soft);font-weight:600;padding-top:4px;}
+  .pulse-stage .dot{
+    width:8px;height:8px;border-radius:50%;background:var(--teal);
+    margin:0 auto 6px;
+  }
+
+  /* ---- Red flag banner ---- */
+  .redflag{
+    max-width:920px;margin:22px auto 0;padding:0 20px;
+  }
+  .redflag-inner{
+    background:var(--coral-light);
+    border:1px solid #EBC4BA;
+    border-radius:14px;
+    padding:14px 16px;
+    display:flex;gap:12px;align-items:flex-start;
+  }
+  .redflag-inner svg{flex:none;margin-top:2px;color:var(--coral);}
+  .redflag-title{font-weight:700;color:var(--coral);font-size:13.5px;margin-bottom:3px;}
+  .redflag-text{font-size:13.5px;color:#5c2a1d;}
+
+  /* ---- Section grid ---- */
+  .sections{max-width:920px;margin:32px auto 0;padding:0 20px;display:flex;flex-direction:column;gap:16px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  .card-head{
+    display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .card-icon{
+    width:38px;height:38px;border-radius:10px;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--teal-light);color:var(--teal);
+  }
+  .card-title{font-size:17px;font-weight:700;font-family:"Noto Serif","Noto Serif Devanagari","Noto Serif Bengali","Noto Serif Gurmukhi",serif;flex:1;}
+  .card-chevron{transition:transform .18s;color:var(--ink-soft);flex:none;}
+  .card.open .card-chevron{transform:rotate(180deg);}
+  .card-body{
+    max-height:0;overflow:hidden;transition:max-height .25s ease;
+  }
+  .card.open .card-body{max-height:2000px;}
+  .card-body-inner{padding:0 18px 18px;border-top:1px solid var(--line);}
+  .stage-row{
+    display:grid;grid-template-columns:96px 1fr;gap:14px;
+    padding:14px 0;border-bottom:1px dashed var(--line);
+    position:relative;
+  }
+  .stage-row:last-child{border-bottom:none;}
+  .stage-label{
+    font-size:12px;font-weight:700;color:var(--teal);
+    position:relative;padding-left:16px;
+  }
+  .stage-label::before{
+    content:"";position:absolute;left:0;top:4px;width:8px;height:8px;border-radius:50%;background:var(--teal);
+  }
+  .stage-text{font-size:14.5px;color:var(--ink);}
+  .stage-text b{color:var(--ink);}
+  .note-chip{
+    display:inline-block;margin-top:10px;font-size:12.5px;background:var(--amber-light);
+    color:var(--amber);border:1px solid #E9CFA9;padding:6px 10px;border-radius:8px;
+  }
+
+  /* ---- Footer ---- */
+  .footer{max-width:920px;margin:36px auto 120px;padding:0 20px;font-size:12px;color:var(--ink-soft);}
+  .footer .sources{margin-top:6px;}
+
+  /* ---- Chat ---- */
+  .chat-fab{
+    position:fixed;right:20px;bottom:20px;z-index:50;
+    background:var(--ink);color:#fff;border:none;border-radius:999px;
+    padding:14px 18px;display:flex;align-items:center;gap:9px;
+    box-shadow:0 10px 30px -8px rgba(22,35,43,0.45);
+    font-size:14px;font-weight:600;
+  }
+  .chat-panel{
+    position:fixed;right:20px;bottom:20px;z-index:60;
+    width:380px;max-width:92vw;height:min(560px,78vh);
+    background:var(--card);border-radius:18px;border:1px solid var(--line);
+    box-shadow:0 20px 60px -12px rgba(22,35,43,0.4);
+    display:none;flex-direction:column;overflow:hidden;
+  }
+  .chat-panel.open{display:flex;}
+  .chat-head{
+    background:var(--ink);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px;
+  }
+  .chat-head-title{font-size:14px;font-weight:700;flex:1;font-family:"Noto Serif","Noto Serif Devanagari","Noto Serif Bengali","Noto Serif Gurmukhi",serif;}
+  .chat-head-sub{font-size:11px;opacity:.7;}
+  .chat-close{background:transparent;border:none;color:#fff;opacity:.8;padding:4px;}
+  .chat-body{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--paper);}
+  .msg{max-width:86%;padding:10px 13px;border-radius:14px;font-size:13.5px;line-height:1.45;}
+  .msg.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px;}
+  .msg.user{background:var(--teal);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;}
+  .msg.typing{background:#fff;border:1px solid var(--line);align-self:flex-start;color:var(--ink-soft);font-style:italic;}
+  .chat-input-row{
+    border-top:1px solid var(--line);padding:10px;display:flex;gap:8px;background:#fff;
+  }
+  .chat-input-row input{
+    flex:1;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;
+    background:var(--paper);color:var(--ink);
+  }
+  .chat-input-row button{
+    background:var(--teal);color:#fff;border:none;border-radius:10px;padding:0 14px;font-weight:600;font-size:13px;
+  }
+  .chat-input-row button:disabled{opacity:.5;}
+  .chat-disclaimer{font-size:10.5px;color:var(--ink-soft);padding:6px 14px 10px;background:#fff;}
+
+  @media (max-width:520px){
+    .stage-row{grid-template-columns:1fr;gap:4px;}
+    .pulse-stage{font-size:9.5px;}
+    .chat-panel{right:10px;left:10px;width:auto;bottom:10px;height:74vh;}
+    .chat-fab{right:16px;bottom:16px;padding:12px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="15" stroke="#1F6F5C" stroke-width="1.6"/>
+      <path d="M5 16h4l2.2-6 3.6 12 3-9 1.8 5.5L21 16h6" stroke="#1F6F5C" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <div class="brand-name" id="brandName">Post-PTCA Recovery Guide</div>
+      <div class="brand-sub" id="brandSub">EasyMyCare Clinic</div>
+    </div>
+  </div>
+  <div class="langswitch" id="langswitch">
+    <button data-lang="en">EN</button>
+    <button data-lang="hi">हिं</button>
+    <button data-lang="pa">ਪੰ</button>
+    <button data-lang="bn">বাং</button>
+  </div>
+</div>
+
+<div class="hero">
+  <span class="eyebrow" id="eyebrow">DAILY LIFE AFTER ANGIOPLASTY</span>
+  <h1 id="heroTitle"></h1>
+  <p class="tagline" id="heroTag"></p>
+</div>
+
+<div class="pulse-wrap">
+  <div class="pulse-rail">
+    <svg class="pulse-svg" viewBox="0 0 900 46" preserveAspectRatio="none">
+      <polyline points="0,23 130,23 150,23 160,4 172,40 184,12 196,23 260,23 280,23 300,8 316,36 330,23 400,23 430,23 448,10 462,32 476,23 560,23 585,23 602,6 618,38 634,23 720,23 745,23 762,10 778,32 792,23 900,23"
+        fill="none" stroke="#1F6F5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+    </svg>
+    <div class="pulse-stages" id="pulseStages"></div>
+  </div>
+</div>
+
+<div class="redflag">
+  <div class="redflag-inner">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 9v4M12 16.5h.01M10.3 3.9 1.8 18.5A1.8 1.8 0 0 0 3.35 21.2h17.3a1.8 1.8 0 0 0 1.55-2.7L13.7 3.9a1.8 1.8 0 0 0-3.1 0Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div>
+      <div class="redflag-title" id="redflagTitle"></div>
+      <div class="redflag-text" id="redflagText"></div>
+    </div>
+  </div>
+</div>
+
+<div class="sections" id="sections"></div>
+
+<div class="footer">
+  <div id="footerNote"></div>
+  <div class="sources" id="footerSources"></div>
+</div>
+
+<button class="chat-fab" id="chatFab">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span id="chatFabLabel">Ask a question</span>
+</button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <div>
+      <div class="chat-head-title" id="chatHeadTitle">Recovery Q&A</div>
+      <div class="chat-head-sub" id="chatHeadSub">Based on this guide</div>
+    </div>
+    <button class="chat-close" id="chatClose">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input-row">
+    <input id="chatInput" type="text" placeholder="Type your question…">
+    <button id="chatSend">Send</button>
+  </div>
+  <div class="chat-disclaimer" id="chatDisclaimer"></div>
+</div>
+
+<script>
+/* =========================================================
+   CONTENT — English source, then hi / pa / bn translations
+   ========================================================= */
+const STAGE_AXIS = ["Day 1–2","Week 1","Week 2","Week 4","Week 6"];
+const STAGE_AXIS_HI = ["दिन 1–2","सप्ताह 1","सप्ताह 2","सप्ताह 4","सप्ताह 6"];
+const STAGE_AXIS_PA = ["ਦਿਨ 1–2","ਹਫ਼ਤਾ 1","ਹਫ਼ਤਾ 2","ਹਫ਼ਤਾ 4","ਹਫ਼ਤਾ 6"];
+const STAGE_AXIS_BN = ["দিন ১–২","সপ্তাহ ১","সপ্তাহ ২","সপ্তাহ ৪","সপ্তাহ ৬"];
+
+const ICONS = {
+  driving:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M3 13l1.6-4.8A2 2 0 0 1 6.5 7h11a2 2 0 0 1 1.9 1.2L21 13M3 13v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5M3 13h18M7 17h.01M17 17h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  flying:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M10.5 21 12 17l1.5 4M2 12l20-7-4 8M2 12l6.5-1.8M2 12l6.5 4.2M18 13 8.2 10.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sexual:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 20.5s-7.5-4.4-9.7-9A5.2 5.2 0 0 1 12 6.4a5.2 5.2 0 0 1 9.7 5.1c-2.2 4.6-9.7 9-9.7 9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+  work:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="3" y="7.5" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7.5V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1.5M3 12.5h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  gym:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M6.5 7v10M17.5 7v10M4 9.5v5M20 9.5v5M9 12h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+};
+
+const DATA = {
+en:{
+  dir:"ltr",
+  brandName:"Post-PTCA Recovery Guide", brandSub:"EasyMyCare Clinic",
+  eyebrow:"DAILY LIFE AFTER ANGIOPLASTY",
+  heroTitle:"Getting back to normal life after your angioplasty",
+  heroTag:"Simple, guideline-based answers on driving, flying, intimacy, work and exercise after a coronary stent — based on ESC, ACC/AHA and Indian cardiology society practice recommendations.",
+  stageAxis: STAGE_AXIS,
+  redflagTitle:"Seek emergency care immediately if you notice:",
+  redflagText:"Chest pain or pressure, severe breathlessness, fainting, palpitations, or heavy bleeding/swelling at the puncture site — at any point during any of the activities below.",
+  chatFabLabel:"Ask a question",
+  chatHeadTitle:"Recovery Q&A", chatHeadSub:"Answers based on this guide",
+  chatInputPlaceholder:"Type your question…", chatSend:"Send",
+  chatIntro:"Hello. Ask me anything about driving, flying, intimacy, returning to work, or exercise after your angioplasty — I'll answer based on this guide.",
+  chatDisclaimer:"This chatbot gives general lifestyle guidance only and does not replace advice from your own cardiologist. In an emergency, call your local emergency number immediately.",
+  footerNote:"This guide summarises general post-PCI (angioplasty/stent) lifestyle recommendations from ESC, ACC/AHA and Indian cardiology society practice guidance. It is educational material and does not replace individual advice from your treating cardiologist — recovery timelines vary with the complexity of your procedure, heart function, access site (radial/femoral) and any complications.",
+  footerSources:"References: ESC Guidelines on Myocardial Revascularisation & Fitness to Drive; ACC/AHA Coronary Revascularisation Guidelines; Cardiological Society of India practice advisories.",
+  sections:[
+    {key:"driving", title:"Driving", items:[
+      {stage:"First 48 hours", text:"Do not drive. Sedation, reduced reflexes, and the wrist/groin puncture site make it unsafe."},
+      {stage:"Uncomplicated, planned PCI", text:"Private car driving can usually resume after <b>1 week</b>, once you feel well and can move the puncture-site limb freely."},
+      {stage:"PCI after a heart attack", text:"Private driving after <b>1 week</b> if your heart's pumping function is preserved and no further procedure is planned; otherwise wait <b>4 weeks</b>."},
+      {stage:"Commercial / professional drivers", text:"Truck, bus, taxi or other commercial licence holders should wait at least <b>6 weeks</b> and need cardiologist clearance, usually with a stress test."}
+    ], note:"Always check your local transport authority's medical fitness-to-drive rules as well."},
+    {key:"flying", title:"Flying", items:[
+      {stage:"First 48 hours", text:"Avoid air travel."},
+      {stage:"Short domestic flight, uncomplicated PCI", text:"Usually safe after <b>2–3 days</b> if you are walking comfortably with no chest pain or breathlessness."},
+      {stage:"Long-haul / international flight", text:"Wait at least <b>1–2 weeks</b>. Walk every hour, stay hydrated, and consider compression stockings to reduce clot risk."},
+      {stage:"PCI after a heart attack or with complications", text:"Wait at least <b>2 weeks</b> (sometimes 4–6 weeks) and get specific cardiologist clearance before flying."}
+    ], note:"Carry your discharge summary, current medicine list, and travel/medical insurance details."},
+    {key:"sexual", title:"Sexual activity", items:[
+      {stage:"General rule", text:"It is usually safe to resume once you can climb <b>2 flights of stairs</b> briskly, or walk fast, without chest pain, breathlessness or excess fatigue — around <b>1 week</b> after an uncomplicated procedure."},
+      {stage:"After a heart attack / heart failure", text:"Wait longer, typically <b>2–4 weeks</b>, and discuss timing with your cardiologist."},
+      {stage:"Medicines", text:"Never combine PDE5-inhibitor medicines (e.g. sildenafil, tadalafil) with nitrate medicines — this combination can cause a dangerous drop in blood pressure."}
+    ], note:"Stop the activity and seek help if you develop chest pain, palpitations or severe breathlessness."},
+    {key:"work", title:"Return to work", items:[
+      {stage:"Desk / sedentary work", text:"Usually after <b>1 week</b>, once you feel well."},
+      {stage:"Light physical work", text:"(standing, walking, light lifting) — usually around <b>2 weeks</b>."},
+      {stage:"Heavy manual labour", text:"Physically demanding jobs need <b>4–6 weeks</b>, and often a stress test before clearance."}
+    ], note:"Joining a cardiac rehabilitation programme, where available, helps you return to work and daily activity safely and confidently."},
+    {key:"gym", title:"Gym & exercise", items:[
+      {stage:"Day 1–2", text:"Gentle indoor walking as tolerated. Avoid lifting or straining the puncture-site arm/leg."},
+      {stage:"Week 1", text:"Short daily walks (10–15 minutes), gradually increasing."},
+      {stage:"Week 2", text:"Increase walking duration; light stationary cycling. Avoid swimming until the access site is fully healed."},
+      {stage:"Week 2–4", text:"Begin a structured cardiac rehabilitation exercise programme if enrolled."},
+      {stage:"Week 4–6", text:"Light gym work / resistance training with light weights, guided by your rehab team."},
+      {stage:"After clearance", text:"Heavy weightlifting, competitive sport or high-intensity training only after cardiologist clearance, usually confirmed with a treadmill/stress test around 6 weeks."}
+    ], note:"Regular moderate activity, not intense bursts, is what protects your heart long-term."}
+  ]
+},
+hi:{
+  dir:"ltr",
+  brandName:"पोस्ट-पीटीसीए रिकवरी गाइड", brandSub:"ईज़ीमाईकेयर क्लिनिक",
+  eyebrow:"एंजियोप्लास्टी के बाद रोज़मर्रा का जीवन",
+  heroTitle:"एंजियोप्लास्टी के बाद सामान्य जीवन की ओर वापसी",
+  heroTag:"स्टेंट लगने के बाद ड्राइविंग, हवाई यात्रा, यौन संबंध, काम और व्यायाम को लेकर सरल, दिशानिर्देश-आधारित जानकारी — ESC, ACC/AHA और भारतीय कार्डियोलॉजी सोसाइटी की सलाह पर आधारित।",
+  stageAxis: STAGE_AXIS_HI,
+  redflagTitle:"नीचे बताई गई किसी भी गतिविधि के दौरान अगर ये लक्षण दिखें तो तुरंत आपातकालीन सहायता लें:",
+  redflagText:"सीने में दर्द या दबाव, तेज़ सांस फूलना, बेहोशी, धड़कन का अनियमित होना, या पंक्चर वाली जगह पर अधिक रक्तस्राव/सूजन।",
+  chatFabLabel:"प्रश्न पूछें",
+  chatHeadTitle:"रिकवरी प्रश्नोत्तर", chatHeadSub:"इसी गाइड पर आधारित उत्तर",
+  chatInputPlaceholder:"अपना प्रश्न लिखें…", chatSend:"भेजें",
+  chatIntro:"नमस्ते। एंजियोप्लास्टी के बाद ड्राइविंग, हवाई यात्रा, यौन संबंध, काम पर वापसी या व्यायाम से जुड़ा कोई भी प्रश्न पूछें — मैं इसी गाइड के आधार पर जवाब दूंगा।",
+  chatDisclaimer:"यह चैटबॉट केवल सामान्य जीवनशैली संबंधी जानकारी देता है और आपके अपने कार्डियोलॉजिस्ट की सलाह का विकल्प नहीं है। आपात स्थिति में तुरंत अपने स्थानीय आपातकालीन नंबर पर कॉल करें।",
+  footerNote:"यह गाइड ESC, ACC/AHA और भारतीय कार्डियोलॉजी सोसाइटी की सामान्य पोस्ट-पीसीआई (एंजियोप्लास्टी/स्टेंट) जीवनशैली सिफारिशों का सारांश है। यह केवल शैक्षणिक जानकारी है और आपके इलाज करने वाले कार्डियोलॉजिस्ट की व्यक्तिगत सलाह का स्थान नहीं ले सकती — रिकवरी का समय आपकी प्रक्रिया की जटिलता, हृदय की कार्यक्षमता, एक्सेस साइट (रेडियल/फीमोरल) और किसी भी जटिलता पर निर्भर करता है।",
+  footerSources:"संदर्भ: ESC मायोकार्डियल रिवास्कुलराइज़ेशन एवं ड्राइविंग फिटनेस दिशानिर्देश; ACC/AHA कोरोनरी रिवास्कुलराइज़ेशन दिशानिर्देश; कार्डियोलॉजिकल सोसाइटी ऑफ इंडिया की व्यावहारिक सलाह।",
+  sections:[
+    {key:"driving", title:"ड्राइविंग", items:[
+      {stage:"पहले 48 घंटे", text:"गाड़ी न चलाएं। सेडेशन का असर, प्रतिक्रिया क्षमता में कमी, और कलाई/ग्रोइन पंक्चर साइट के कारण यह असुरक्षित है।"},
+      {stage:"सामान्य, योजनाबद्ध पीसीआई", text:"निजी कार चलाना आमतौर पर <b>1 सप्ताह</b> बाद शुरू किया जा सकता है, जब आप स्वस्थ महसूस करें और पंक्चर वाले अंग को सामान्य रूप से हिला सकें।"},
+      {stage:"हार्ट अटैक के बाद पीसीआई", text:"यदि हृदय की पंपिंग क्षमता सामान्य है और कोई अन्य प्रक्रिया योजनाबद्ध नहीं है, तो <b>1 सप्ताह</b> बाद निजी ड्राइविंग संभव है; अन्यथा <b>4 सप्ताह</b> प्रतीक्षा करें।"},
+      {stage:"कमर्शियल / पेशेवर चालक", text:"ट्रक, बस, टैक्सी या अन्य कमर्शियल लाइसेंस धारकों को कम से कम <b>6 सप्ताह</b> प्रतीक्षा करनी चाहिए और आमतौर पर स्ट्रेस टेस्ट के साथ कार्डियोलॉजिस्ट की अनुमति आवश्यक है।"}
+    ], note:"अपने स्थानीय परिवहन प्राधिकरण के मेडिकल फिटनेस नियमों की भी जांच अवश्य करें।"},
+    {key:"flying", title:"हवाई यात्रा", items:[
+      {stage:"पहले 48 घंटे", text:"हवाई यात्रा से बचें।"},
+      {stage:"छोटी घरेलू उड़ान, सामान्य पीसीआई", text:"यदि आप बिना सीने में दर्द या सांस फूले आराम से चल पा रहे हैं, तो आमतौर पर <b>2–3 दिन</b> बाद यात्रा सुरक्षित है।"},
+      {stage:"लंबी / अंतरराष्ट्रीय उड़ान", text:"कम से कम <b>1–2 सप्ताह</b> प्रतीक्षा करें। हर घंटे थोड़ा टहलें, पानी पीते रहें, और रक्त के थक्के के जोखिम को कम करने के लिए कम्प्रेशन स्टॉकिंग्स पर विचार करें।"},
+      {stage:"हार्ट अटैक या जटिलताओं के बाद पीसीआई", text:"कम से कम <b>2 सप्ताह</b> (कभी-कभी 4–6 सप्ताह) प्रतीक्षा करें और यात्रा से पहले कार्डियोलॉजिस्ट से स्पष्ट अनुमति लें।"}
+    ], note:"अपना डिस्चार्ज सारांश, वर्तमान दवाओं की सूची, और यात्रा/मेडिकल बीमा के दस्तावेज़ साथ रखें।"},
+    {key:"sexual", title:"यौन संबंध", items:[
+      {stage:"सामान्य नियम", text:"यदि आप बिना सीने में दर्द, सांस फूले या अत्यधिक थकान के <b>2 मंज़िल सीढ़ियां</b> तेज़ी से चढ़ सकें या तेज़ चल सकें, तो आमतौर पर यह सुरक्षित है — सामान्य प्रक्रिया के लगभग <b>1 सप्ताह</b> बाद।"},
+      {stage:"हार्ट अटैक / हार्ट फेल्योर के बाद", text:"आमतौर पर <b>2–4 सप्ताह</b> अधिक प्रतीक्षा करें, और समय को लेकर अपने कार्डियोलॉजिस्ट से चर्चा करें।"},
+      {stage:"दवाएं", text:"PDE5-इनहिबिटर दवाओं (जैसे सिल्डेनाफिल, टाडालाफिल) को कभी भी नाइट्रेट दवाओं के साथ न लें — इस संयोजन से रक्तचाप में खतरनाक गिरावट हो सकती है।"}
+    ], note:"यदि सीने में दर्द, धड़कन अनियमित होना या तेज़ सांस फूलना हो, तो गतिविधि तुरंत रोकें और सहायता लें।"},
+    {key:"work", title:"काम पर वापसी", items:[
+      {stage:"डेस्क / बैठकर किया जाने वाला काम", text:"स्वस्थ महसूस करने पर आमतौर पर <b>1 सप्ताह</b> बाद।"},
+      {stage:"हल्का शारीरिक काम", text:"(खड़े होना, चलना, हल्का सामान उठाना) — आमतौर पर लगभग <b>2 सप्ताह</b> बाद।"},
+      {stage:"भारी शारीरिक श्रम", text:"शारीरिक रूप से कठिन कार्यों के लिए <b>4–6 सप्ताह</b> चाहिए, और अक्सर अनुमति से पहले स्ट्रेस टेस्ट आवश्यक होता है।"}
+    ], note:"जहां उपलब्ध हो, वहां कार्डियक रिहैबिलिटेशन कार्यक्रम में शामिल होना काम और रोज़मर्रा की गतिविधियों में सुरक्षित व आत्मविश्वास भरी वापसी में मदद करता है।"},
+    {key:"gym", title:"जिम और व्यायाम", items:[
+      {stage:"दिन 1–2", text:"सहनशक्ति के अनुसार घर के अंदर हल्की सैर करें। पंक्चर वाले हाथ/पैर पर ज़ोर डालने या भारी सामान उठाने से बचें।"},
+      {stage:"सप्ताह 1", text:"रोज़ छोटी सैर (10–15 मिनट), धीरे-धीरे बढ़ाते हुए।"},
+      {stage:"सप्ताह 2", text:"सैर की अवधि बढ़ाएं; हल्की स्टेशनरी साइकिलिंग करें। एक्सेस साइट पूरी तरह ठीक होने तक तैराकी से बचें।"},
+      {stage:"सप्ताह 2–4", text:"यदि नामांकित हैं, तो संरचित कार्डियक रिहैबिलिटेशन व्यायाम कार्यक्रम शुरू करें।"},
+      {stage:"सप्ताह 4–6", text:"अपनी रिहैब टीम के मार्गदर्शन में हल्के वज़न के साथ हल्का जिम/रेजिस्टेंस प्रशिक्षण।"},
+      {stage:"अनुमति मिलने के बाद", text:"भारी वेटलिफ्टिंग, प्रतिस्पर्धी खेल या तीव्र-तीव्रता वाला प्रशिक्षण केवल कार्डियोलॉजिस्ट की अनुमति के बाद, जो आमतौर पर लगभग 6 सप्ताह में ट्रेडमिल/स्ट्रेस टेस्ट से पुष्ट की जाती है।"}
+    ], note:"तीव्र लेकिन छोटे प्रयासों की बजाय नियमित मध्यम गतिविधि ही आपके हृदय की दीर्घकालिक सुरक्षा करती है।"}
+  ]
+},
+pa:{
+  dir:"ltr",
+  brandName:"ਪੋਸਟ-ਪੀਟੀਸੀਏ ਰਿਕਵਰੀ ਗਾਈਡ", brandSub:"ਈਜ਼ੀਮਾਈਕੇਅਰ ਕਲੀਨਿਕ",
+  eyebrow:"ਐਂਜੀਓਪਲਾਸਟੀ ਤੋਂ ਬਾਅਦ ਰੋਜ਼ਾਨਾ ਜੀਵਨ",
+  heroTitle:"ਐਂਜੀਓਪਲਾਸਟੀ ਤੋਂ ਬਾਅਦ ਆਮ ਜੀਵਨ ਵੱਲ ਵਾਪਸੀ",
+  heroTag:"ਸਟੈਂਟ ਲੱਗਣ ਤੋਂ ਬਾਅਦ ਡਰਾਈਵਿੰਗ, ਹਵਾਈ ਸਫ਼ਰ, ਸਰੀਰਕ ਸੰਬੰਧ, ਕੰਮ ਅਤੇ ਕਸਰਤ ਬਾਰੇ ਸਰਲ, ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼-ਅਧਾਰਿਤ ਜਾਣਕਾਰੀ — ESC, ACC/AHA ਅਤੇ ਭਾਰਤੀ ਕਾਰਡੀਓਲੋਜੀ ਸੋਸਾਇਟੀ ਦੀ ਸਲਾਹ 'ਤੇ ਆਧਾਰਿਤ।",
+  stageAxis: STAGE_AXIS_PA,
+  redflagTitle:"ਹੇਠਾਂ ਦੱਸੀ ਕਿਸੇ ਵੀ ਗਤੀਵਿਧੀ ਦੌਰਾਨ ਜੇ ਇਹ ਲੱਛਣ ਦਿਖਣ ਤਾਂ ਤੁਰੰਤ ਐਮਰਜੈਂਸੀ ਮਦਦ ਲਓ:",
+  redflagText:"ਛਾਤੀ ਵਿੱਚ ਦਰਦ ਜਾਂ ਦਬਾਅ, ਬਹੁਤ ਜ਼ਿਆਦਾ ਸਾਹ ਚੜ੍ਹਨਾ, ਬੇਹੋਸ਼ੀ, ਧੜਕਣ ਦਾ ਅਨਿਯਮਿਤ ਹੋਣਾ, ਜਾਂ ਪੰਕਚਰ ਵਾਲੀ ਥਾਂ 'ਤੇ ਵਧੇਰੇ ਖੂਨ ਵਹਿਣਾ/ਸੋਜ।",
+  chatFabLabel:"ਸਵਾਲ ਪੁੱਛੋ",
+  chatHeadTitle:"ਰਿਕਵਰੀ ਸਵਾਲ-ਜਵਾਬ", chatHeadSub:"ਇਸੇ ਗਾਈਡ 'ਤੇ ਆਧਾਰਿਤ ਜਵਾਬ",
+  chatInputPlaceholder:"ਆਪਣਾ ਸਵਾਲ ਲਿਖੋ…", chatSend:"ਭੇਜੋ",
+  chatIntro:"ਸਤ ਸ੍ਰੀ ਅਕਾਲ। ਐਂਜੀਓਪਲਾਸਟੀ ਤੋਂ ਬਾਅਦ ਡਰਾਈਵਿੰਗ, ਹਵਾਈ ਸਫ਼ਰ, ਸਰੀਰਕ ਸੰਬੰਧ, ਕੰਮ 'ਤੇ ਵਾਪਸੀ ਜਾਂ ਕਸਰਤ ਬਾਰੇ ਕੋਈ ਵੀ ਸਵਾਲ ਪੁੱਛੋ — ਮੈਂ ਇਸੇ ਗਾਈਡ ਦੇ ਆਧਾਰ 'ਤੇ ਜਵਾਬ ਦੇਵਾਂਗਾ।",
+  chatDisclaimer:"ਇਹ ਚੈਟਬੋਟ ਸਿਰਫ਼ ਆਮ ਜੀਵਨਸ਼ੈਲੀ ਸੰਬੰਧੀ ਜਾਣਕਾਰੀ ਦਿੰਦਾ ਹੈ ਅਤੇ ਤੁਹਾਡੇ ਆਪਣੇ ਕਾਰਡੀਓਲੋਜਿਸਟ ਦੀ ਸਲਾਹ ਦਾ ਬਦਲ ਨਹੀਂ ਹੈ। ਐਮਰਜੈਂਸੀ ਵਿੱਚ ਤੁਰੰਤ ਆਪਣੇ ਸਥਾਨਕ ਐਮਰਜੈਂਸੀ ਨੰਬਰ 'ਤੇ ਕਾਲ ਕਰੋ।",
+  footerNote:"ਇਹ ਗਾਈਡ ESC, ACC/AHA ਅਤੇ ਭਾਰਤੀ ਕਾਰਡੀਓਲੋਜੀ ਸੋਸਾਇਟੀ ਦੀਆਂ ਆਮ ਪੋਸਟ-ਪੀਸੀਆਈ (ਐਂਜੀਓਪਲਾਸਟੀ/ਸਟੈਂਟ) ਜੀਵਨਸ਼ੈਲੀ ਸਿਫ਼ਾਰਸ਼ਾਂ ਦਾ ਸਾਰ ਹੈ। ਇਹ ਸਿਰਫ਼ ਵਿਦਿਅਕ ਜਾਣਕਾਰੀ ਹੈ ਅਤੇ ਤੁਹਾਡੇ ਇਲਾਜ ਕਰਨ ਵਾਲੇ ਕਾਰਡੀਓਲੋਜਿਸਟ ਦੀ ਨਿੱਜੀ ਸਲਾਹ ਦੀ ਥਾਂ ਨਹੀਂ ਲੈ ਸਕਦੀ — ਰਿਕਵਰੀ ਦਾ ਸਮਾਂ ਤੁਹਾਡੀ ਪ੍ਰਕਿਰਿਆ ਦੀ ਜਟਿਲਤਾ, ਦਿਲ ਦੀ ਕਾਰਜਸ਼ੀਲਤਾ, ਐਕਸੈਸ ਸਾਈਟ (ਰੇਡੀਅਲ/ਫੀਮੋਰਲ) ਅਤੇ ਕਿਸੇ ਵੀ ਜਟਿਲਤਾ 'ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ।",
+  footerSources:"ਹਵਾਲੇ: ESC ਮਾਇਓਕਾਰਡੀਅਲ ਰੀਵੈਸਕੁਲਰਾਈਜ਼ੇਸ਼ਨ ਅਤੇ ਡਰਾਈਵਿੰਗ ਫਿਟਨੈਸ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼; ACC/AHA ਕੋਰੋਨਰੀ ਰੀਵੈਸਕੁਲਰਾਈਜ਼ੇਸ਼ਨ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼; ਕਾਰਡੀਓਲੋਜੀਕਲ ਸੋਸਾਇਟੀ ਆਫ਼ ਇੰਡੀਆ ਦੀ ਵਿਹਾਰਕ ਸਲਾਹ।",
+  sections:[
+    {key:"driving", title:"ਡਰਾਈਵਿੰਗ", items:[
+      {stage:"ਪਹਿਲੇ 48 ਘੰਟੇ", text:"ਗੱਡੀ ਨਾ ਚਲਾਓ। ਸੈਡੇਸ਼ਨ ਦਾ ਅਸਰ, ਘਟੀ ਪ੍ਰਤੀਕਿਰਿਆ ਸਮਰੱਥਾ, ਅਤੇ ਗੁੱਟ/ਗਰੋਇਨ ਪੰਕਚਰ ਥਾਂ ਕਾਰਨ ਇਹ ਅਸੁਰੱਖਿਅਤ ਹੈ।"},
+      {stage:"ਆਮ, ਯੋਜਨਾਬੱਧ ਪੀਸੀਆਈ", text:"ਨਿੱਜੀ ਕਾਰ ਚਲਾਉਣਾ ਆਮ ਤੌਰ 'ਤੇ <b>1 ਹਫ਼ਤੇ</b> ਬਾਅਦ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ, ਜਦੋਂ ਤੁਸੀਂ ਠੀਕ ਮਹਿਸੂਸ ਕਰੋ ਅਤੇ ਪੰਕਚਰ ਵਾਲੇ ਅੰਗ ਨੂੰ ਆਸਾਨੀ ਨਾਲ ਹਿਲਾ ਸਕੋ।"},
+      {stage:"ਦਿਲ ਦੇ ਦੌਰੇ ਤੋਂ ਬਾਅਦ ਪੀਸੀਆਈ", text:"ਜੇ ਦਿਲ ਦੀ ਪੰਪਿੰਗ ਸਮਰੱਥਾ ਠੀਕ ਹੈ ਅਤੇ ਕੋਈ ਹੋਰ ਪ੍ਰਕਿਰਿਆ ਯੋਜਨਾਬੱਧ ਨਹੀਂ, ਤਾਂ <b>1 ਹਫ਼ਤੇ</b> ਬਾਅਦ ਨਿੱਜੀ ਡਰਾਈਵਿੰਗ ਸੰਭਵ ਹੈ; ਨਹੀਂ ਤਾਂ <b>4 ਹਫ਼ਤੇ</b> ਉਡੀਕ ਕਰੋ।"},
+      {stage:"ਕਮਰਸ਼ੀਅਲ / ਪੇਸ਼ੇਵਰ ਡਰਾਈਵਰ", text:"ਟਰੱਕ, ਬੱਸ, ਟੈਕਸੀ ਜਾਂ ਹੋਰ ਕਮਰਸ਼ੀਅਲ ਲਾਇਸੈਂਸ ਧਾਰਕਾਂ ਨੂੰ ਘੱਟੋ-ਘੱਟ <b>6 ਹਫ਼ਤੇ</b> ਉਡੀਕ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ ਅਤੇ ਆਮ ਤੌਰ 'ਤੇ ਸਟ੍ਰੈੱਸ ਟੈਸਟ ਸਮੇਤ ਕਾਰਡੀਓਲੋਜਿਸਟ ਦੀ ਮਨਜ਼ੂਰੀ ਲੋੜੀਂਦੀ ਹੈ।"}
+    ], note:"ਆਪਣੇ ਸਥਾਨਕ ਟਰਾਂਸਪੋਰਟ ਅਥਾਰਟੀ ਦੇ ਮੈਡੀਕਲ ਫਿਟਨੈਸ ਨਿਯਮਾਂ ਦੀ ਵੀ ਜਾਂਚ ਕਰੋ।"},
+    {key:"flying", title:"ਹਵਾਈ ਸਫ਼ਰ", items:[
+      {stage:"ਪਹਿਲੇ 48 ਘੰਟੇ", text:"ਹਵਾਈ ਸਫ਼ਰ ਤੋਂ ਬਚੋ।"},
+      {stage:"ਛੋਟੀ ਘਰੇਲੂ ਉਡਾਣ, ਆਮ ਪੀਸੀਆਈ", text:"ਜੇ ਤੁਸੀਂ ਬਿਨਾਂ ਛਾਤੀ ਦੇ ਦਰਦ ਜਾਂ ਸਾਹ ਚੜ੍ਹੇ ਆਰਾਮ ਨਾਲ ਤੁਰ ਸਕਦੇ ਹੋ, ਤਾਂ ਆਮ ਤੌਰ 'ਤੇ <b>2–3 ਦਿਨਾਂ</b> ਬਾਅਦ ਸਫ਼ਰ ਸੁਰੱਖਿਅਤ ਹੈ।"},
+      {stage:"ਲੰਬੀ / ਅੰਤਰਰਾਸ਼ਟਰੀ ਉਡਾਣ", text:"ਘੱਟੋ-ਘੱਟ <b>1–2 ਹਫ਼ਤੇ</b> ਉਡੀਕ ਕਰੋ। ਹਰ ਘੰਟੇ ਥੋੜ੍ਹਾ ਤੁਰੋ, ਪਾਣੀ ਪੀਂਦੇ ਰਹੋ, ਅਤੇ ਖੂਨ ਦੇ ਥੱਕੇ ਦਾ ਖਤਰਾ ਘਟਾਉਣ ਲਈ ਕੰਪਰੈਸ਼ਨ ਸਟੌਕਿੰਗਜ਼ 'ਤੇ ਵਿਚਾਰ ਕਰੋ।"},
+      {stage:"ਦਿਲ ਦੇ ਦੌਰੇ ਜਾਂ ਜਟਿਲਤਾਵਾਂ ਤੋਂ ਬਾਅਦ ਪੀਸੀਆਈ", text:"ਘੱਟੋ-ਘੱਟ <b>2 ਹਫ਼ਤੇ</b> (ਕਈ ਵਾਰ 4–6 ਹਫ਼ਤੇ) ਉਡੀਕ ਕਰੋ ਅਤੇ ਸਫ਼ਰ ਤੋਂ ਪਹਿਲਾਂ ਕਾਰਡੀਓਲੋਜਿਸਟ ਤੋਂ ਸਪਸ਼ਟ ਮਨਜ਼ੂਰੀ ਲਓ।"}
+    ], note:"ਆਪਣਾ ਡਿਸਚਾਰਜ ਸਾਰ, ਮੌਜੂਦਾ ਦਵਾਈਆਂ ਦੀ ਸੂਚੀ, ਅਤੇ ਸਫ਼ਰ/ਮੈਡੀਕਲ ਬੀਮੇ ਦੇ ਕਾਗਜ਼ਾਤ ਨਾਲ ਰੱਖੋ।"},
+    {key:"sexual", title:"ਸਰੀਰਕ ਸੰਬੰਧ", items:[
+      {stage:"ਆਮ ਨਿਯਮ", text:"ਜੇ ਤੁਸੀਂ ਬਿਨਾਂ ਛਾਤੀ ਦੇ ਦਰਦ, ਸਾਹ ਚੜ੍ਹੇ ਜਾਂ ਬਹੁਤ ਜ਼ਿਆਦਾ ਥਕਾਵਟ ਦੇ <b>2 ਮੰਜ਼ਿਲਾਂ ਪੌੜੀਆਂ</b> ਤੇਜ਼ੀ ਨਾਲ ਚੜ੍ਹ ਸਕੋ ਜਾਂ ਤੇਜ਼ ਤੁਰ ਸਕੋ, ਤਾਂ ਇਹ ਆਮ ਤੌਰ 'ਤੇ ਸੁਰੱਖਿਅਤ ਹੈ — ਆਮ ਪ੍ਰਕਿਰਿਆ ਦੇ ਲਗਭਗ <b>1 ਹਫ਼ਤੇ</b> ਬਾਅਦ।"},
+      {stage:"ਦਿਲ ਦੇ ਦੌਰੇ / ਦਿਲ ਦੀ ਅਸਫ਼ਲਤਾ ਤੋਂ ਬਾਅਦ", text:"ਆਮ ਤੌਰ 'ਤੇ <b>2–4 ਹਫ਼ਤੇ</b> ਵਧੇਰੇ ਉਡੀਕ ਕਰੋ, ਅਤੇ ਸਮੇਂ ਬਾਰੇ ਆਪਣੇ ਕਾਰਡੀਓਲੋਜਿਸਟ ਨਾਲ ਗੱਲ ਕਰੋ।"},
+      {stage:"ਦਵਾਈਆਂ", text:"PDE5-ਇਨਹਿਬਿਟਰ ਦਵਾਈਆਂ (ਜਿਵੇਂ ਸਿਲਡੇਨਾਫ਼ਿਲ, ਟੈਡਾਲਾਫ਼ਿਲ) ਨੂੰ ਕਦੇ ਵੀ ਨਾਈਟ੍ਰੇਟ ਦਵਾਈਆਂ ਨਾਲ ਨਾ ਲਓ — ਇਸ ਮਿਸ਼ਰਣ ਨਾਲ ਬਲੱਡ ਪ੍ਰੈਸ਼ਰ ਵਿੱਚ ਖ਼ਤਰਨਾਕ ਗਿਰਾਵਟ ਆ ਸਕਦੀ ਹੈ।"}
+    ], note:"ਜੇ ਛਾਤੀ ਵਿੱਚ ਦਰਦ, ਧੜਕਣ ਦਾ ਅਨਿਯਮਿਤ ਹੋਣਾ ਜਾਂ ਬਹੁਤ ਜ਼ਿਆਦਾ ਸਾਹ ਚੜ੍ਹਨਾ ਹੋਵੇ, ਤਾਂ ਗਤੀਵਿਧੀ ਤੁਰੰਤ ਰੋਕੋ ਅਤੇ ਮਦਦ ਲਓ।"},
+    {key:"work", title:"ਕੰਮ 'ਤੇ ਵਾਪਸੀ", items:[
+      {stage:"ਡੈਸਕ / ਬੈਠ ਕੇ ਕੀਤਾ ਜਾਣ ਵਾਲਾ ਕੰਮ", text:"ਠੀਕ ਮਹਿਸੂਸ ਕਰਨ 'ਤੇ ਆਮ ਤੌਰ 'ਤੇ <b>1 ਹਫ਼ਤੇ</b> ਬਾਅਦ।"},
+      {stage:"ਹਲਕਾ ਸਰੀਰਕ ਕੰਮ", text:"(ਖੜ੍ਹੇ ਹੋਣਾ, ਤੁਰਨਾ, ਹਲਕਾ ਸਮਾਨ ਚੁੱਕਣਾ) — ਆਮ ਤੌਰ 'ਤੇ ਲਗਭਗ <b>2 ਹਫ਼ਤੇ</b> ਬਾਅਦ।"},
+      {stage:"ਭਾਰੀ ਸਰੀਰਕ ਮਿਹਨਤ", text:"ਸਰੀਰਕ ਤੌਰ 'ਤੇ ਔਖੇ ਕੰਮਾਂ ਲਈ <b>4–6 ਹਫ਼ਤੇ</b> ਚਾਹੀਦੇ ਹਨ, ਅਤੇ ਅਕਸਰ ਮਨਜ਼ੂਰੀ ਤੋਂ ਪਹਿਲਾਂ ਸਟ੍ਰੈੱਸ ਟੈਸਟ ਲੋੜੀਂਦਾ ਹੁੰਦਾ ਹੈ।"}
+    ], note:"ਜਿੱਥੇ ਉਪਲਬਧ ਹੋਵੇ, ਕਾਰਡੀਐਕ ਰੀਹੈਬਿਲੀਟੇਸ਼ਨ ਪ੍ਰੋਗਰਾਮ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਣਾ ਕੰਮ ਅਤੇ ਰੋਜ਼ਾਨਾ ਗਤੀਵਿਧੀਆਂ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਤੇ ਭਰੋਸੇਮੰਦ ਵਾਪਸੀ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ।"},
+    {key:"gym", title:"ਜਿਮ ਅਤੇ ਕਸਰਤ", items:[
+      {stage:"ਦਿਨ 1–2", text:"ਸਹਿਣਸ਼ੀਲਤਾ ਅਨੁਸਾਰ ਘਰ ਦੇ ਅੰਦਰ ਹਲਕੀ ਸੈਰ ਕਰੋ। ਪੰਕਚਰ ਵਾਲੇ ਹੱਥ/ਪੈਰ 'ਤੇ ਜ਼ੋਰ ਪਾਉਣ ਜਾਂ ਭਾਰੀ ਸਮਾਨ ਚੁੱਕਣ ਤੋਂ ਬਚੋ।"},
+      {stage:"ਹਫ਼ਤਾ 1", text:"ਰੋਜ਼ ਛੋਟੀ ਸੈਰ (10–15 ਮਿੰਟ), ਹੌਲੀ-ਹੌਲੀ ਵਧਾਉਂਦੇ ਹੋਏ।"},
+      {stage:"ਹਫ਼ਤਾ 2", text:"ਸੈਰ ਦੀ ਮਿਆਦ ਵਧਾਓ; ਹਲਕੀ ਸਟੇਸ਼ਨਰੀ ਸਾਈਕਲਿੰਗ ਕਰੋ। ਐਕਸੈਸ ਥਾਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਠੀਕ ਹੋਣ ਤੱਕ ਤੈਰਾਕੀ ਤੋਂ ਬਚੋ।"},
+      {stage:"ਹਫ਼ਤਾ 2–4", text:"ਜੇ ਦਾਖਲ ਹੋ, ਤਾਂ ਸੰਗਠਿਤ ਕਾਰਡੀਐਕ ਰੀਹੈਬਿਲੀਟੇਸ਼ਨ ਕਸਰਤ ਪ੍ਰੋਗਰਾਮ ਸ਼ੁਰੂ ਕਰੋ।"},
+      {stage:"ਹਫ਼ਤਾ 4–6", text:"ਆਪਣੀ ਰੀਹੈਬ ਟੀਮ ਦੀ ਅਗਵਾਈ ਵਿੱਚ ਹਲਕੇ ਭਾਰ ਨਾਲ ਹਲਕੀ ਜਿਮ/ਰੈਜ਼ਿਸਟੈਂਸ ਸਿਖਲਾਈ।"},
+      {stage:"ਮਨਜ਼ੂਰੀ ਤੋਂ ਬਾਅਦ", text:"ਭਾਰੀ ਵੇਟਲਿਫਟਿੰਗ, ਮੁਕਾਬਲੇ ਵਾਲੀ ਖੇਡ ਜਾਂ ਤੀਬਰ ਸਿਖਲਾਈ ਸਿਰਫ਼ ਕਾਰਡੀਓਲੋਜਿਸਟ ਦੀ ਮਨਜ਼ੂਰੀ ਤੋਂ ਬਾਅਦ, ਜੋ ਆਮ ਤੌਰ 'ਤੇ ਲਗਭਗ 6 ਹਫ਼ਤਿਆਂ ਵਿੱਚ ਟ੍ਰੈਡਮਿਲ/ਸਟ੍ਰੈੱਸ ਟੈਸਟ ਨਾਲ ਪੁਸ਼ਟੀ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।"}
+    ], note:"ਤੀਬਰ ਪਰ ਥੋੜ੍ਹੇ ਸਮੇਂ ਦੀ ਬਜਾਏ ਨਿਯਮਤ ਦਰਮਿਆਨੀ ਗਤੀਵਿਧੀ ਹੀ ਤੁਹਾਡੇ ਦਿਲ ਦੀ ਲੰਬੇ ਸਮੇਂ ਦੀ ਰਾਖੀ ਕਰਦੀ ਹੈ।"}
+  ]
+},
+bn:{
+  dir:"ltr",
+  brandName:"পোস্ট-পিটিসিএ রিকভারি গাইড", brandSub:"ইজিমাইকেয়ার ক্লিনিক",
+  eyebrow:"অ্যাঞ্জিওপ্লাস্টির পরে দৈনন্দিন জীবন",
+  heroTitle:"অ্যাঞ্জিওপ্লাস্টির পরে স্বাভাবিক জীবনে ফিরে আসা",
+  heroTag:"স্টেন্ট বসানোর পরে ড্রাইভিং, বিমান ভ্রমণ, যৌন মিলন, কাজ ও ব্যায়াম নিয়ে সহজ, নির্দেশিকা-ভিত্তিক তথ্য — ESC, ACC/AHA এবং ভারতীয় কার্ডিওলজি সোসাইটির পরামর্শের ভিত্তিতে।",
+  stageAxis: STAGE_AXIS_BN,
+  redflagTitle:"নিচের যেকোনো কার্যকলাপের সময় এই লক্ষণ দেখা দিলে সঙ্গে সঙ্গে জরুরি চিকিৎসা সহায়তা নিন:",
+  redflagText:"বুকে ব্যথা বা চাপ, তীব্র শ্বাসকষ্ট, অজ্ঞান হয়ে যাওয়া, হৃদস্পন্দনে অনিয়ম, অথবা পাংচার স্থানে অতিরিক্ত রক্তক্ষরণ/ফোলাভাব।",
+  chatFabLabel:"প্রশ্ন জিজ্ঞাসা করুন",
+  chatHeadTitle:"রিকভারি প্রশ্নোত্তর", chatHeadSub:"এই গাইডের ভিত্তিতে উত্তর",
+  chatInputPlaceholder:"আপনার প্রশ্ন লিখুন…", chatSend:"পাঠান",
+  chatIntro:"নমস্কার। অ্যাঞ্জিওপ্লাস্টির পরে ড্রাইভিং, বিমান ভ্রমণ, যৌন মিলন, কাজে ফেরা বা ব্যায়াম সম্পর্কে যেকোনো প্রশ্ন জিজ্ঞাসা করুন — আমি এই গাইডের ভিত্তিতে উত্তর দেব।",
+  chatDisclaimer:"এই চ্যাটবট শুধুমাত্র সাধারণ জীবনযাত্রা সংক্রান্ত পরামর্শ দেয় এবং আপনার নিজস্ব কার্ডিওলজিস্টের পরামর্শের বিকল্প নয়। জরুরি অবস্থায় সঙ্গে সঙ্গে আপনার স্থানীয় জরুরি নম্বরে কল করুন।",
+  footerNote:"এই গাইডটি ESC, ACC/AHA এবং ভারতীয় কার্ডিওলজি সোসাইটির সাধারণ পোস্ট-পিসিআই (অ্যাঞ্জিওপ্লাস্টি/স্টেন্ট) জীবনযাত্রা সংক্রান্ত সুপারিশের সারাংশ। এটি শুধুমাত্র শিক্ষামূলক উপাদান এবং আপনার চিকিৎসারত কার্ডিওলজিস্টের ব্যক্তিগত পরামর্শের বিকল্প নয় — সেরে ওঠার সময়কাল আপনার প্রক্রিয়ার জটিলতা, হৃদযন্ত্রের কার্যকারিতা, অ্যাক্সেস স্থান (রেডিয়াল/ফিমোরাল) এবং কোনো জটিলতার উপর নির্ভর করে।",
+  footerSources:"তথ্যসূত্র: ESC মায়োকার্ডিয়াল রিভাস্কুলারাইজেশন ও ড্রাইভিং ফিটনেস নির্দেশিকা; ACC/AHA করোনারি রিভাস্কুলারাইজেশন নির্দেশিকা; কার্ডিওলজিক্যাল সোসাইটি অফ ইন্ডিয়ার ব্যবহারিক পরামর্শ।",
+  sections:[
+    {key:"driving", title:"ড্রাইভিং", items:[
+      {stage:"প্রথম ৪৮ ঘণ্টা", text:"গাড়ি চালাবেন না। সেডেশনের প্রভাব, কম প্রতিক্রিয়া ক্ষমতা এবং কব্জি/কুঁচকির পাংচার স্থানের কারণে এটি নিরাপদ নয়।"},
+      {stage:"সাধারণ, পরিকল্পিত পিসিআই", text:"ব্যক্তিগত গাড়ি চালানো সাধারণত <b>১ সপ্তাহ</b> পরে শুরু করা যায়, যখন আপনি সুস্থ বোধ করেন এবং পাংচার স্থানের অঙ্গ স্বাভাবিকভাবে নাড়াতে পারেন।"},
+      {stage:"হার্ট অ্যাটাকের পরে পিসিআই", text:"হৃদযন্ত্রের পাম্পিং ক্ষমতা স্বাভাবিক থাকলে এবং আর কোনো প্রক্রিয়া পরিকল্পিত না থাকলে <b>১ সপ্তাহ</b> পরে ব্যক্তিগত ড্রাইভিং সম্ভব; নাহলে <b>৪ সপ্তাহ</b> অপেক্ষা করুন।"},
+      {stage:"বাণিজ্যিক / পেশাদার চালক", text:"ট্রাক, বাস, ট্যাক্সি বা অন্য বাণিজ্যিক লাইসেন্সধারীদের অন্তত <b>৬ সপ্তাহ</b> অপেক্ষা করা উচিত এবং সাধারণত স্ট্রেস টেস্টসহ কার্ডিওলজিস্টের অনুমতি প্রয়োজন।"}
+    ], note:"আপনার স্থানীয় পরিবহন কর্তৃপক্ষের মেডিকেল ফিটনেস নিয়মও যাচাই করুন।"},
+    {key:"flying", title:"বিমান ভ্রমণ", items:[
+      {stage:"প্রথম ৪৮ ঘণ্টা", text:"বিমান ভ্রমণ এড়িয়ে চলুন।"},
+      {stage:"সংক্ষিপ্ত অভ্যন্তরীণ ফ্লাইট, সাধারণ পিসিআই", text:"বুকে ব্যথা বা শ্বাসকষ্ট ছাড়া আরামে হাঁটতে পারলে সাধারণত <b>২–৩ দিন</b> পরে ভ্রমণ নিরাপদ।"},
+      {stage:"দীর্ঘ / আন্তর্জাতিক ফ্লাইট", text:"অন্তত <b>১–২ সপ্তাহ</b> অপেক্ষা করুন। প্রতি ঘণ্টায় একটু হাঁটুন, পর্যাপ্ত পানি পান করুন, এবং রক্ত জমাট বাঁধার ঝুঁকি কমাতে কম্প্রেশন স্টকিং বিবেচনা করুন।"},
+      {stage:"হার্ট অ্যাটাক বা জটিলতার পরে পিসিআই", text:"অন্তত <b>২ সপ্তাহ</b> (কখনো কখনো ৪–৬ সপ্তাহ) অপেক্ষা করুন এবং ভ্রমণের আগে নির্দিষ্টভাবে কার্ডিওলজিস্টের অনুমতি নিন।"}
+    ], note:"আপনার ডিসচার্জ সারাংশ, বর্তমান ওষুধের তালিকা এবং ভ্রমণ/মেডিকেল বিমার কাগজপত্র সঙ্গে রাখুন।"},
+    {key:"sexual", title:"যৌন মিলন", items:[
+      {stage:"সাধারণ নিয়ম", text:"বুকে ব্যথা, শ্বাসকষ্ট বা অতিরিক্ত ক্লান্তি ছাড়া <b>২ তলা সিঁড়ি</b> দ্রুত ওঠা বা জোরে হাঁটা সম্ভব হলে, সাধারণত এটি নিরাপদ — সাধারণ প্রক্রিয়ার প্রায় <b>১ সপ্তাহ</b> পরে।"},
+      {stage:"হার্ট অ্যাটাক / হার্ট ফেইলিওরের পরে", text:"সাধারণত <b>২–৪ সপ্তাহ</b> বেশি অপেক্ষা করুন এবং সময় নিয়ে আপনার কার্ডিওলজিস্টের সঙ্গে আলোচনা করুন।"},
+      {stage:"ওষুধ", text:"PDE5-ইনহিবিটর ওষুধ (যেমন সিলডেনাফিল, টাডালাফিল) কখনোই নাইট্রেট ওষুধের সঙ্গে খাবেন না — এই মিশ্রণে রক্তচাপ বিপজ্জনকভাবে কমে যেতে পারে।"}
+    ], note:"বুকে ব্যথা, হৃদস্পন্দনে অনিয়ম বা তীব্র শ্বাসকষ্ট হলে কার্যকলাপ বন্ধ করে সাহায্য নিন।"},
+    {key:"work", title:"কাজে ফেরা", items:[
+      {stage:"ডেস্ক / বসে করা কাজ", text:"সুস্থ বোধ করলে সাধারণত <b>১ সপ্তাহ</b> পরে।"},
+      {stage:"হালকা শারীরিক কাজ", text:"(দাঁড়ানো, হাঁটা, হালকা ভার তোলা) — সাধারণত প্রায় <b>২ সপ্তাহ</b> পরে।"},
+      {stage:"ভারী শারীরিক পরিশ্রম", text:"শারীরিকভাবে কঠিন কাজের জন্য <b>৪–৬ সপ্তাহ</b> প্রয়োজন, এবং প্রায়শই অনুমতির আগে স্ট্রেস টেস্ট দরকার হয়।"}
+    ], note:"যেখানে সম্ভব, কার্ডিয়াক রিহ্যাবিলিটেশন প্রোগ্রামে যোগ দেওয়া কাজ ও দৈনন্দিন কাজে নিরাপদ ও আত্মবিশ্বাসী প্রত্যাবর্তনে সাহায্য করে।"},
+    {key:"gym", title:"জিম ও ব্যায়াম", items:[
+      {stage:"দিন ১–২", text:"সহনশীলতা অনুযায়ী ঘরের ভেতরে হালকা হাঁটাচলা করুন। পাংচার স্থানের হাত/পায়ে চাপ দেওয়া বা ভারী কিছু তোলা এড়িয়ে চলুন।"},
+      {stage:"সপ্তাহ ১", text:"প্রতিদিন ছোট হাঁটা (১০–১৫ মিনিট), ধীরে ধীরে বাড়িয়ে।"},
+      {stage:"সপ্তাহ ২", text:"হাঁটার সময় বাড়ান; হালকা স্টেশনারি সাইক্লিং করুন। অ্যাক্সেস স্থান পুরোপুরি সেরে না ওঠা পর্যন্ত সাঁতার এড়িয়ে চলুন।"},
+      {stage:"সপ্তাহ ২–৪", text:"নথিভুক্ত থাকলে সংগঠিত কার্ডিয়াক রিহ্যাবিলিটেশন ব্যায়াম কর্মসূচি শুরু করুন।"},
+      {stage:"সপ্তাহ ৪–৬", text:"আপনার রিহ্যাব দলের নির্দেশনায় হালকা ওজন নিয়ে হালকা জিম/রেজিস্ট্যান্স প্রশিক্ষণ।"},
+      {stage:"অনুমতির পরে", text:"ভারী ওজন তোলা, প্রতিযোগিতামূলক খেলা বা উচ্চ-তীব্রতার প্রশিক্ষণ শুধুমাত্র কার্ডিওলজিস্টের অনুমতির পরে, যা সাধারণত প্রায় ৬ সপ্তাহে ট্রেডমিল/স্ট্রেস টেস্ট দিয়ে নিশ্চিত করা হয়।"}
+    ], note:"তীব্র কিন্তু স্বল্পস্থায়ী পরিশ্রমের চেয়ে নিয়মিত মাঝারি কার্যকলাপই আপনার হৃদযন্ত্রকে দীর্ঘমেয়াদে সুরক্ষা দেয়।"}
+  ]
+}
+};
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+let currentLang = "en";
+
+function renderSections(lang){
+  const d = DATA[lang];
+  const wrap = document.getElementById("sections");
+  wrap.innerHTML = "";
+  d.sections.forEach((sec, i)=>{
+    const card = document.createElement("div");
+    card.className = "card" + (i===0 ? " open":"");
+    card.innerHTML = `
+      <div class="card-head" data-idx="${i}">
+        <div class="card-icon">${ICONS[sec.key]}</div>
+        <div class="card-title">${sec.title}</div>
+        <svg class="card-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          ${sec.items.map(it=>`
+            <div class="stage-row">
+              <div class="stage-label">${it.stage}</div>
+              <div class="stage-text">${it.text}</div>
+            </div>
+          `).join("")}
+          ${sec.note ? `<div class="note-chip">${sec.note}</div>` : ""}
+        </div>
+      </div>
+    `;
+    card.querySelector(".card-head").addEventListener("click", ()=>{
+      card.classList.toggle("open");
+    });
+    wrap.appendChild(card);
+  });
+}
+
+function renderStaticText(lang){
+  const d = DATA[lang];
+  document.documentElement.lang = lang;
+  document.getElementById("brandName").textContent = d.brandName;
+  document.getElementById("brandSub").textContent = d.brandSub;
+  document.getElementById("eyebrow").textContent = d.eyebrow;
+  document.getElementById("heroTitle").textContent = d.heroTitle;
+  document.getElementById("heroTag").textContent = d.heroTag;
+  document.getElementById("redflagTitle").textContent = d.redflagTitle;
+  document.getElementById("redflagText").textContent = d.redflagText;
+  document.getElementById("chatFabLabel").textContent = d.chatFabLabel;
+  document.getElementById("chatHeadTitle").textContent = d.chatHeadTitle;
+  document.getElementById("chatHeadSub").textContent = d.chatHeadSub;
+  document.getElementById("chatInput").placeholder = d.chatInputPlaceholder;
+  document.getElementById("chatSend").textContent = d.chatSend;
+  document.getElementById("chatDisclaimer").textContent = d.chatDisclaimer;
+  document.getElementById("footerNote").textContent = d.footerNote;
+  document.getElementById("footerSources").textContent = d.footerSources;
+
+  const pulseWrap = document.getElementById("pulseStages");
+  pulseWrap.innerHTML = d.stageAxis.map(s=>`<div class="pulse-stage"><div class="dot"></div>${s}</div>`).join("");
+
+  document.querySelectorAll(".langswitch button").forEach(b=>{
+    b.classList.toggle("active", b.dataset.lang === lang);
+  });
+}
+
+function setLang(lang){
+  currentLang = lang;
+  renderStaticText(lang);
+  renderSections(lang);
+  resetChat();
+}
+
+document.getElementById("langswitch").addEventListener("click", (e)=>{
+  const btn = e.target.closest("button[data-lang]");
+  if(!btn) return;
+  setLang(btn.dataset.lang);
+});
+
+setLang("en");
+
+/* =========================================================
+   CHATBOT — grounded on this guide's content, via Claude API
+   ========================================================= */
+const chatFab = document.getElementById("chatFab");
+const chatPanel = document.getElementById("chatPanel");
+const chatBody = document.getElementById("chatBody");
+const chatInput = document.getElementById("chatInput");
+const chatSend = document.getElementById("chatSend");
+
+let chatHistory = []; // {role, content}
+
+function resetChat(){
+  chatHistory = [];
+  chatBody.innerHTML = "";
+  addMsg("bot", DATA[currentLang].chatIntro);
+}
+
+function addMsg(role, text){
+  const el = document.createElement("div");
+  el.className = "msg " + role;
+  el.textContent = text;
+  chatBody.appendChild(el);
+  chatBody.scrollTop = chatBody.scrollHeight;
+  return el;
+}
+
+chatFab.addEventListener("click", ()=>{
+  chatPanel.classList.add("open");
+  chatFab.style.display = "none";
+  if(chatBody.children.length === 0) resetChat();
+});
+document.getElementById("chatClose").addEventListener("click", ()=>{
+  chatPanel.classList.remove("open");
+  chatFab.style.display = "flex";
+});
+
+function buildSystemPrompt(lang){
+  const d = DATA[lang];
+  const langNames = {en:"English", hi:"Hindi", pa:"Punjabi", bn:"Bengali"};
+  let guideText = d.sections.map(sec=>{
+    const items = sec.items.map(it=>`- ${it.stage}: ${it.text.replace(/<\/?b>/g,"")}`).join("\n");
+    return `## ${sec.title}\n${items}\n${sec.note ? "Note: "+sec.note : ""}`;
+  }).join("\n\n");
+
+  return `You are a warm, careful patient-education assistant embedded inside a "Post-PTCA (angioplasty) Recovery Guide" web app for a cardiology clinic. A patient who has recently had coronary angioplasty/stenting is asking you questions.
+
+Answer ONLY using the guideline content below (based on ESC, ACC/AHA and Indian cardiology society practice recommendations), which is also shown to the patient elsewhere in this app. Keep answers short (2-5 sentences), warm, and practical. Always answer in ${langNames[lang]}, using simple everyday language a patient can understand.
+
+If the patient describes symptoms such as chest pain, severe breathlessness, fainting, palpitations, or heavy bleeding/swelling at the puncture site, tell them clearly to seek emergency medical care immediately, before anything else.
+
+If a question needs personal medical judgement (their specific ejection fraction, medications, complication history, exact clearance date), give the general guidance from below but clearly recommend they confirm the specific timing with their own treating cardiologist.
+
+Do not answer questions unrelated to post-angioplasty recovery and lifestyle; gently redirect to the topic of this guide.
+
+GUIDELINE CONTENT:
+${guideText}`;
+}
+
+async function sendMessage(){
+  const text = chatInput.value.trim();
+  if(!text) return;
+  chatInput.value = "";
+  chatSend.disabled = true;
+  addMsg("user", text);
+  chatHistory.push({role:"user", content:text});
+
+  const typingEl = addMsg("typing", currentLang==="hi" ? "लिख रहा हूं…" : currentLang==="pa" ? "ਲਿਖ ਰਿਹਾ ਹਾਂ…" : currentLang==="bn" ? "লিখছি…" : "Typing…");
+  typingEl.classList.add("typing");
+
+  try{
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-6",
+        max_tokens: 500,
+        system: buildSystemPrompt(currentLang),
+        messages: chatHistory
+      })
+    });
+    const data = await response.json();
+    const textBlocks = (data.content || []).filter(b=>b.type==="text").map(b=>b.text);
+    const reply = textBlocks.join("\n").trim() || "Sorry, I couldn't process that. Please try again.";
+    typingEl.remove();
+    addMsg("bot", reply);
+    chatHistory.push({role:"assistant", content:reply});
+  }catch(err){
+    typingEl.remove();
+    addMsg("bot", "Sorry, something went wrong reaching the assistant. Please try again in a moment.");
+  }finally{
+    chatSend.disabled = false;
+  }
+}
+
+chatSend.addEventListener("click", sendMessage);
+chatInput.addEventListener("keydown", (e)=>{
+  if(e.key === "Enter") sendMessage();
+});
+</script>
+</body>
+</html>
